@@ -14,6 +14,6 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
       path: 'https://res.cloudinary.com/lmnas/image/fetch/',
       domains: ["res.cloudinary.com"],
     },
-    assetPrefix: './'
+    assetPrefix: '/lmnas-cms-blog/'
   };
 }
