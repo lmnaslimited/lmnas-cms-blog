@@ -51,6 +51,8 @@ export default function Post({ post, morePosts, preview }) {
 }
 
 export async function getStaticProps({ params, preview = null }) {
+  
+  console.log('Params',params)
   const data = await getPostAndMorePosts(params.slug, preview)
   const content = await markdownToHtml(data?.posts[0]?.content || '')
 
@@ -68,8 +70,16 @@ export async function getStaticProps({ params, preview = null }) {
 
 export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug()
+  console.log(allPosts)
+    // Get the paths we want to pre-render based on posts
+  const paths = allPosts.map((post) => ({
+     params: { slug: post.slug },
+   }))
+
+   console.log(paths)
   return {
     paths: allPosts?.map((post) => `/posts/${post.slug}`) || [],
-    fallback: true,
-  }
+   paths,
+    fallback: false,
+  } 
 }

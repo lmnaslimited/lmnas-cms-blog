@@ -1,3 +1,4 @@
+import { CMS_URL } from '@/lib/constants'
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
