@@ -1,7 +1,6 @@
 # A statically generated blog example using Next.js and Strapi
 
-This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using [Strapi](https://strapi.io/) as the data source.
-
+This example POC of LUM with Strapi, Couldinary and Next.js's 
 ## Demo
 
 [https://next-blog-strapi.vercel.app/](https://next-blog-strapi.vercel.app/)
