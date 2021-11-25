@@ -11,14 +11,13 @@ export default function PostPreview({
   author,
   slug,
 }) {
-  console.log(process.env.BACKEND_URL, process.env.HOST_NAME)
   return (
     <div>
       <div className="mb-5">
         <CoverImage slug={slug} title={title} url={coverImage.url} />
       </div>
       <h3 className="text-3xl mb-3 leading-snug">
-        <Link as=  {`https://lmnaslimited.github.io/lmnas-cms-blog/posts/${slug}`} href={"https://lmnaslimited.github.io/lmnas-cms-blog//posts/[slug]"}>
+        <Link href={process.env.BACKEND_URL + `/posts/${slug}`}>
           <a className="hover:underline">{title}</a>
         </Link>
       </h3>
