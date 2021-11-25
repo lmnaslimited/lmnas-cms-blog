@@ -22,7 +22,7 @@ export default function CoverImage({ title, url, slug }) {
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <Link as={`https://lmnaslimited.github.io/lmnas-cms-blog/posts/${slug}`} href={"https://lmnaslimited.github.io/lmnas-cms-blog/posts/[slug]"}>
+        <Link href={process.env.BACKEND_URL+`/posts/${slug}`}>
           <a aria-label={title}>{image}</a>
         </Link>
       ) : (
