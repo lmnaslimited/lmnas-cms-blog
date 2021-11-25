@@ -22,7 +22,7 @@ export default function CoverImage({ title, url, slug }) {
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <Link href={`/posts/${slug}`}>
+        <Link as={process.env.BACKEND_URL + `/posts/${slug}`} href={process.env.BACKEND_URL+"/posts/[slug]"}>
           <a aria-label={title}>{image}</a>
         </Link>
       ) : (

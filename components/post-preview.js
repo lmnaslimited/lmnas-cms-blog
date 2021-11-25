@@ -11,7 +11,7 @@ export default function PostPreview({
   author,
   slug,
 }) {
-  console.log(process.env.BACKEND_URL)
+  console.log(process.env.BACKEND_URL, process.env.HOST_NAME)
   return (
     <div>
       <div className="mb-5">
