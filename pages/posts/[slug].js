@@ -70,7 +70,6 @@ export async function getStaticProps({ params, preview = null }) {
 
 export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug()
-  console.log(allPosts)
     // Get the paths we want to pre-render based on posts
   const paths = allPosts.map((post) => ({
      params: { slug: post.slug },

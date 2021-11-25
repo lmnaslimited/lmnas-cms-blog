@@ -1,9 +1,9 @@
 # A statically generated blog example using Next.js and Strapi
 
-This example POC of LUM with Strapi, Couldinary and Next.js's 
+This example POC of LUM with Strapi, Couldinary and Next.js's deployed to Git pages
 ## Demo
 
-[https://next-blog-strapi.vercel.app/](https://next-blog-strapi.vercel.app/)
+[https://lmnaslimited.github.io/lmnas-cms-blog/](https://lmnaslimited.github.io/lmnas-cms-blog/)
 
 ## Deploy your own
 
