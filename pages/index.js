@@ -6,18 +6,20 @@ import Layout from '@/components/layout'
 import { getAllPostsForHome } from '@/lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
+import { strapiAPI } from '@/lib/api'
 
-export default function Index({ allPosts, preview }) {
+export default function Index({ allPosts, preview, categories }) {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
+
   return (
     <>
-      <Layout preview={preview}>
+      <Layout preview={preview} categories = {categories} >
         <Head>
           <title>Next.js Blog Example with {CMS_NAME}</title>
         </Head>
         <Container>
-          <Intro />
+          <Intro title='Blog'/>
           {heroPost && (
             <HeroPost
               title={heroPost.title}
@@ -37,7 +39,8 @@ export default function Index({ allPosts, preview }) {
 
 export async function getStaticProps({ preview = null }) {
   const allPosts = (await getAllPostsForHome(preview)) || []
+  const categories = await strapiAPI("/categories")
   return {
-    props: { allPosts, preview },
+    props: { allPosts, preview, categories },
   }
 }

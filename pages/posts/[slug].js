@@ -12,14 +12,15 @@ import PostTitle from '@/components/post-title'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 import markdownToHtml from '@/lib/markdownToHtml'
+import { strapiAPI } from '@/lib/api'
 
-export default function Post({ post, morePosts, preview }) {
+export default function Post({ post, morePosts, preview, categories }) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout preview={preview}>
+    <Layout preview={preview} categories={categories}>
       <Container>
         <Header />
         {router.isFallback ? (
@@ -54,7 +55,7 @@ export async function getStaticProps({ params, preview = null }) {
   
   const data = await getPostAndMorePosts(params.slug, preview)
   const content = await markdownToHtml(data?.posts[0]?.content || '')
-
+  const categories = await strapiAPI("/categories")
   return {
     props: {
       preview,
@@ -63,19 +64,21 @@ export async function getStaticProps({ params, preview = null }) {
         content,
       },
       morePosts: data?.morePosts,
+      categories
     },
   }
 }
 
 export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug()
+ 
     // Get the paths we want to pre-render based on posts
   const paths = allPosts.map((post) => ({
      params: { slug: post.slug },
    }))
   return {
     paths: allPosts?.map((post) => `/posts/${post.slug}`) || [],
-   paths,
+    paths,
     fallback: false,
   } 
 }

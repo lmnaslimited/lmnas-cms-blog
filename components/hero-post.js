@@ -23,7 +23,7 @@ export default function HeroPost({
               <a className="hover:underline">{title}</a>
             </Link>
           </h3>
-          <div className="mb-4 md:mb-0 text-lg">
+          <div className="mb-4 md:mb-0 text-lg text-th-accent-medium">
             <Date dateString={date} />
           </div>
         </div>
