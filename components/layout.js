@@ -9,7 +9,10 @@ export default function Layout({ preview, children, categories }) {
     <> 
      <Navbar categories = {categories}/>
 
-      <Nav categories = {categories}/>
+    { /*
+
+    <Nav categories = {categories}/>
+    */}  
       <Meta />
       
       <div className="min-h-screen">
