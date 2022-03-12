@@ -7,6 +7,7 @@ import Navbar from './navbar'
 export default function Layout({ preview, children, categories }) {
   return (
     <> 
+     <div className="bg-th-background">
      <Navbar categories = {categories}/>
 
     { /*
@@ -23,7 +24,7 @@ export default function Layout({ preview, children, categories }) {
       </div>
      
       <Footer />
-   
+      </div>
     </>
   )
 }

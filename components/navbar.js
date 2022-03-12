@@ -2,6 +2,7 @@ import React from "react"
 import Link from "next/link"
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
+import Toggle from '../components/navbar/toggle'
 
 const themes = [{ name: 'Light' }, { name: 'Dark' }, { name: 'Emerald' }, { name: 'Pink' }];
 const industries = ['Retail', 'Education', 'Healthcare', 'Distribution', 'Manufacturing', 'Agriculture']
@@ -9,9 +10,11 @@ const menuItems = ['Pricing', 'Blog', 'Contact', 'Subscriptions', 'Login']
 
 const Navbar = ({ categories }) => {
   const [mounted, setMounted] = useState(false);
-  const [toggle, setToggle] = useState(true);
+  const [collapse, setCollapse] = useState(true);
 
-  const toggleClass = ' transform translate-x-4';
+  const hiddenClass = ' hidden'
+  // Refer Blog https://darrenwhite.dev/blog/nextjs-tailwindcss-theming
+  // Themes are configure in /styles/index.css
   const { theme, setTheme } = useTheme();
 
   // When mounted on client, now we can show the UI
@@ -19,45 +22,36 @@ const Navbar = ({ categories }) => {
 
   if (!mounted) return null;
   return (<div>
-    <nav className="p-5 h-20 bg-gray-800 dark:bg-white dark:text-black md:w-full md:w-auto shadow md:flex md:items-center md:justify-between">
-      <div className=" flex items-center justify-between bg-gray-800 dark:bg-white w-full  ">
+    <nav className="p-5 h-20 text-th-primary-dark md:w-full shadow md:flex md:items-center md:justify-between">
+      <div className=" flex items-center justify-between text-th-primary-dark w-full  ">
         <span>
           <a href="#">
             <img src="https://lmnas.com/wp-content/uploads/2021/04/lmnas2.png" className="md:mx-40 w-50  h-10 md:26 inline"></img>
           </a>
         </span>
-
+       <span> <Toggle/> </span>
 
         <span class="text-3xl text-teal-400 cursor-pointer mr-5 md:hidden block ">
           <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon> </span>
 
       </div>
-      <div
-        className="w-20 h-6 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer"
-        onClick={() => {
-          setToggle(!toggle);
-          setTheme(toggle ? 'dark' : 'light')
-        }}
-  
-      >
-        {/* Switch */}
-        <div
-          className =  {"bg-white  h-5 w-5 rounded-full shadow-md transform duration-300 ease-in-out" +  (toggle ? null : toggleClass)}
-        ></div>
-      </div>
-      <ul className="md:flex relative md:items-center md:justify-center z-[-1] md:h-20 md:z-auto md:static bg-gray-800 dark:bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7
+      
+      <ul className="md:flex relative md:items-center md:justify-center z-[-1] md:h-20 md:z-auto md:static w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7
       md:opacity-100 opacity-0 top-[-400px] ">
         <li className="mx-4 my-6 md:my-0">
-          <a href="#" className="text-md text-white dark:text-black hover:text-pink-500 dark:hover:text-pink-500 duration-500">Home</a>
+          <a href="#" className="text-md text-th-primary-dark hover:text-pink-500  duration-500">Home</a>
         </li>
         <li className="mx-auto my-6 md:my-0">
           <div className="group">
             <button
-              className="bg-gray-800 dark:bg-white dark:hover:text-pink-500  hover:text-pink-500 text-md py-2 px-4 rounded inline-flex items-center"
+              className="dark:hover:text-pink-500  hover:text-pink-500 text-md py-2 px-4 rounded inline-flex items-center"
+              onClick={() => {
+                setCollapse(!collapse);
+              }}
             >
-              <span className=" mr-1  text-white dark:text-black  dark:hover:text-pink-500  hover:text-pink-500 duration-500">Industries</span>
+              <span className="mr-1  text-th-primary-dark dark:hover:text-pink-500  hover:text-pink-500 duration-500">Industries</span>
               <svg
-                className="fill-current h-4 w-4 text-white dark:text-black  dark:hover:text-pink-500  hover:text-pink-500"
+                className="fill-current h-4 w-4 text-th-primary-dark  dark:hover:text-pink-500  hover:text-pink-500"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -66,11 +60,11 @@ const Navbar = ({ categories }) => {
                 />
               </svg>
             </button>
-            <ul className="absolute md:h-20  hidden text-black  bg-gray-800 dark:bg-white pt-1 group-hover:block">
+            <ul className={"absolute md:h-20 pt-1 group-hover:block" + (collapse ? hiddenClass : null)}>
               {
                 industries.map((industry) => (
                   <li className="">
-                    <a className="text-white dark:text-black rounded-t bg-gray-800 dark:bg-white hover:bg-pink-500 dark:hover:text-pink-500 py-2 px-4 block whitespace-no-wrap" href="#">
+                    <a className="bg-th-primary-dark text-th-background-secondary rounded-t  hover:bg-pink-500 dark:hover:text-pink-500 py-2 px-4 block whitespace-no-wrap" href="#">
                       {industry}
                     </a>
                   </li>))
@@ -124,7 +118,7 @@ const Navbar = ({ categories }) => {
 
         {menuItems.map((menuItem) => (
           <li className="mx-4 my-6 md:my-0">
-            <a href="#" className="text-md text-white dark:text-black hover:text-pink-500 dark:hover:text-pink-500  duration-500">{menuItem}</a>
+            <a href="#" className="text-md text-th-primary-dark hover:text-pink-500 dark:hover:text-pink-500  duration-500">{menuItem}</a>
           </li>
         ))}
         {/*

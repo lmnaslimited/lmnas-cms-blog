@@ -14,9 +14,10 @@ export default function Index({ allPosts, preview, categories }) {
 
   return (
     <>
+    <div className="bg-th-background">
       <Layout preview={preview} categories = {categories} >
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>LMNAs Blog with {CMS_NAME}</title>
         </Head>
         <Container>
           <Intro title='Blog'/>
@@ -33,6 +34,7 @@ export default function Index({ allPosts, preview, categories }) {
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>
+      </div>
     </>
   )
 }
