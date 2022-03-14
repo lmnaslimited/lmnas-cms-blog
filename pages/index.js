@@ -14,26 +14,28 @@ export default function Index({ allPosts, preview, categories }) {
 
   return (
     <>
-    <div className="bg-th-background">
-      <Layout preview={preview} categories = {categories} >
-        <Head>
-          <title>LMNAs Blog with {CMS_NAME}</title>
-        </Head>
+      <div className="bg-th-background">
+
         <Container>
-          <Intro title='Blog'/>
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          <Layout preview={preview} categories={categories} >
+            <Head>
+              <title>LMNAs Blog with {CMS_NAME}</title>
+            </Head>
+            <Intro title='Blog' />
+            {heroPost && (
+              <HeroPost
+                title={heroPost.title}
+                coverImage={heroPost.coverImage}
+                date={heroPost.date}
+                author={heroPost.author}
+                slug={heroPost.slug}
+                excerpt={heroPost.excerpt}
+              />
+            )}
+            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          </Layout>
         </Container>
-      </Layout>
+
       </div>
     </>
   )
