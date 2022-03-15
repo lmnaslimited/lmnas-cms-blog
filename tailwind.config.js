@@ -1,4 +1,5 @@
 
+const { pink } = require('tailwindcss/colors')
 const colors = require('tailwindcss/colors')
 module.exports = {
   
@@ -9,6 +10,8 @@ module.exports = {
       colors: {
         emerald: colors.emerald,
         fuchsia: colors.fuchsia,
+        pink: colors.pink,
+        teal: colors.teal,
         'th-background': 'var(--background)',
         'th-background-secondary': 'var(--background-secondary)',
         'th-foreground': 'var(--foreground)',
