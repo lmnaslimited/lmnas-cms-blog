@@ -12,17 +12,8 @@ const industries = ['Retail', 'Education', 'Healthcare', 'Distribution', 'Manufa
 
 
 const Navbar = ({ categories }) => {
-
-  const menuItems = [
-    { menu: 'Industries' },
-    {
-      menu: 'Pricing',
-    },
-    {
-      menu: 'Blog',
-      subMenus: { categories }
-    }, { menu: 'Contact' }, { menu: 'Subscriptions' }
-  ]
+  const cat = categories.map((category) => { return category.name })
+  const menuItems = BuildMenu({ categories })
   const [mounted, setMounted] = useState(false);
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
@@ -49,5 +40,18 @@ const Navbar = ({ categories }) => {
   )
 }
 
-
 export default Navbar
+
+function BuildMenu({ categories }) {
+  const cat = categories.map((category) => { return category.name })
+  return [
+    { menu: 'Industries' },
+    {
+      menu: 'Pricing',
+    },
+    {
+      menu: 'Blog',
+      subMenus: [...cat]
+    }, { menu: 'Contact' }, { menu: 'Subscriptions' }
+  ]
+}
