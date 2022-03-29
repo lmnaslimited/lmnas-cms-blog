@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Container from '@/components/container'
-import PostBody from '@/components/post-body'
+import PostBody from '@/components/post-body/post-body'
 import MoreStories from '@/components/more-stories'
 import Header from '@/components/header'
 import PostHeader from '@/components/post-header'
@@ -20,8 +20,9 @@ export default function Post({ post, morePosts, preview, categories }) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout preview={preview} categories={categories}>
-      <Container>
+    <Container>
+      <Layout preview={preview} categories={categories}>
+
         <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
@@ -39,6 +40,7 @@ export default function Post({ post, morePosts, preview, categories }) {
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
+                heroCta={post.herocta}
               />
               <PostBody content={post.content} />
             </article>
@@ -46,15 +48,29 @@ export default function Post({ post, morePosts, preview, categories }) {
             {morePosts.length > 0 && <MoreStories posts={morePosts} />}
           </>
         )}
-      </Container>
-    </Layout>
+
+      </Layout>
+    </Container>
   )
 }
 
 export async function getStaticProps({ params, preview = null }) {
-  
+
   const data = await getPostAndMorePosts(params.slug, preview)
-  const content = await markdownToHtml(data?.posts[0]?.content || '')
+  const content = data?.posts[0]?.content || ''
+  const content_html = await Promise.all(content.map(async (fragment) => {
+    switch (fragment.__typename) {
+      case 'ComponentBodySection':
+        fragment.html_content = await markdownToHtml(fragment.content)
+        return fragment
+      case 'ComponentCtaButton':
+        fragment.html_content = await markdownToHtml(fragment.content)
+        return fragment
+    }
+  }))
+  console.log(content_html)
+  //const content = await markdownToHtml(data?.posts[0]?.content || '')
+
   const categories = await strapiAPI("/categories")
   return {
     props: {
@@ -71,14 +87,14 @@ export async function getStaticProps({ params, preview = null }) {
 
 export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug()
- 
-    // Get the paths we want to pre-render based on posts
+
+  // Get the paths we want to pre-render based on posts
   const paths = allPosts.map((post) => ({
-     params: { slug: post.slug },
-   }))
+    params: { slug: post.slug },
+  }))
   return {
     paths: allPosts?.map((post) => `/posts/${post.slug}`) || [],
     paths,
     fallback: false,
-  } 
+  }
 }

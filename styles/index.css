@@ -7,10 +7,10 @@
 }
 :root {
   --background: theme('colors.white');
-  --background-secondary: theme('colors.gray.50');
+  --background-secondary: theme('colors.gray.100');
 
-  --accent-dark: theme('colors.pink.900');
-  --accent-medium: theme('colors.pink.700');
+  --accent-dark: theme('colors.pink.700');
+  --accent-medium: theme('colors.pink.600');
   --accent-light: theme('colors.pink.500');
 
   --primary-dark: theme('colors.gray.800');
