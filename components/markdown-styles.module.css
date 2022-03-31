@@ -10,15 +10,15 @@
   @apply my-12 justify-center
 }
 .markdown blockquote {
-  @apply my-6;
+  @apply my-3;
 }
 .markdown h1 {
-  @apply text-3xl mt-8 mb-4 leading-snug;
+  @apply text-3xl mt-5 mb-2 leading-snug;
 }
 .markdown h2 {
-  @apply text-2xl  mt-5 mb-4 leading-snug;
+  @apply text-2xl  mt-4 mb-1 leading-snug;
 }
 
 .markdown h3 {
-  @apply text-xl  mt-4 mb-3 leading-snug;
+  @apply text-xl  mt-3 mb-0 leading-snug;
 }

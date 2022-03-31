@@ -13,33 +13,36 @@ import { strapiAPI } from '@/lib/api'
 
 
 const Category = ({ category, preview, categories, authors }) => {
-   //Implement this later
- /* const seo = {
-    metaTitle: category.name,
-    metaDescription: `All ${category.name} articles`,
-     <Seo seo={seo} />
-  } */
+  //Implement this later
+  /* const seo = {
+     metaTitle: category.name,
+     metaDescription: `All ${category.name} articles`,
+      <Seo seo={seo} />
+   } */
   const heroPost = category.posts[0]
   const morePosts = category.posts.slice(1).map((post) => (
 
-    {slug:post.slug,
-    title:post.title,
-    coverImage:post.coverImage,
-    date:post.date,
-    author:authors.find(c => c.name = post.author),
-    excerpt:post.excerpt
-  }
+    {
+      slug: post.slug,
+      title: post.title,
+      coverImage: post.coverImage,
+      date: post.date,
+      author: authors.find(c => c.name = post.author),
+      excerpt: post.excerpt
+    }
   ))
-  const author = {name: heroPost.author, picture: authors[0].picture} 
+  const author = { name: heroPost.author, picture: authors[0].picture }
   return (
-    <>
-      <Layout preview={preview} categories = {categories} >
-       
-        <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
-        </Head>
-        <Container>
-          <Intro title={category.name}/>
+
+    <Container>
+      <>
+        <Layout preview={preview} categories={categories} >
+
+          <Head>
+            <title>Next.js Blog Example with {CMS_NAME}</title>
+          </Head>
+
+          <Intro title={category.name} />
           {heroPost && (
             <HeroPost
               title={heroPost.title}
@@ -50,17 +53,19 @@ const Category = ({ category, preview, categories, authors }) => {
               excerpt={heroPost.excerpt}
             />
           )}
-           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
-      </Layout>
-    </>
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+
+        </Layout>
+      </>
+    </Container>
+
 
   )
 }
 
 export async function getStaticPaths() {
   const categories = await strapiAPI("/categories")
-  
+
 
   return {
     paths: categories.map((category) => ({
