@@ -22,8 +22,8 @@ export default function Index({ allPosts, preview, categories }) {
             <Head>
               <title>LMNAs Blog with {CMS_NAME}</title>
             </Head>
-            <Landing/>
-            {/** 
+            <Landing allPosts={allPosts} preview={preview} categories={categories}/>
+            
             <Intro title='Blog' />
             {heroPost && (
               <HeroPost
@@ -36,7 +36,7 @@ export default function Index({ allPosts, preview, categories }) {
               />
             )}
             {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-            */}
+            
           </Layout>
         </Container>
 
