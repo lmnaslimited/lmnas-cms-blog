@@ -23,8 +23,8 @@
   --background-secondary: theme('colors.gray.600');
 
   --accent-dark: theme('colors.pink.900');
-  --accent-medium: theme('colors.pink.700');
-  --accent-light: theme('colors.pink.500');
+  --accent-medium: theme('colors.pink.500');
+  --accent-light: theme('colors.pink.400');
 
   --primary-dark: theme('colors.gray.300');
   --primary-medium: theme('colors.gray.200');

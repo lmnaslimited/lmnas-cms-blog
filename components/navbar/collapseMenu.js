@@ -1,6 +1,5 @@
 import { useState } from 'react';
 export default function CollapseMenu({ subMenus }) {
-  console.log('Submenu from CollapseMenu', subMenus)
   const hiddenClass = ' hidden'
   const [collapse, setCollapse] = useState(true);
   return (
@@ -24,7 +23,7 @@ export default function CollapseMenu({ subMenus }) {
           subMenus.map((subMenu) => (
             <li className="">
               <a href={process.env.BACKEND_URL + `/category/${subMenu.slug}`} className="bg-th-primary-dark text-th-background-secondary rounded-t  hover:bg-pink-500 dark:hover:text-pink-500 py-2 px-4 block whitespace-no-wrap">
-                {subMenu.slug}
+                {subMenu.name}
               </a>
             </li>))
         }

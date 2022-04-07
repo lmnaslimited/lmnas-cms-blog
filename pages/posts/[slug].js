@@ -31,7 +31,7 @@ export default function Post({ post, morePosts, preview, categories }) {
             <article>
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {post.title} | {post.category.name} Blog of LMNAs
                 </title>
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
@@ -55,9 +55,11 @@ export default function Post({ post, morePosts, preview, categories }) {
 }
 
 export async function getStaticProps({ params, preview = null }) {
-
+  //Get the Post content and the More posts
   const data = await getPostAndMorePosts(params.slug, preview)
+  //Make content only if it filled
   const content = data?.posts[0]?.content || ''
+  //Get the HTML of dynamic contents of the post.
   const content_html = await Promise.all(content.map(async (fragment) => {
     switch (fragment.__typename) {
       case 'ComponentBodySection':
@@ -68,7 +70,6 @@ export async function getStaticProps({ params, preview = null }) {
         return fragment
     }
   }))
-  console.log(content_html)
   //const content = await markdownToHtml(data?.posts[0]?.content || '')
 
   const categories = await strapiAPI("/categories")
