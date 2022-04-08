@@ -23,7 +23,7 @@ export default function PostHeader({ title, coverImage, date, author, heroCta })
 
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-2/5 h-full">
-            <CoverImage title={title} url={coverImage.url} />
+            <CoverImage title={title} url={coverImage.url} height='1300' />
           </div>
         </div>
       </section>
