@@ -11,17 +11,17 @@ export default function PostCard({ size, imageSrc, post }) {
         <div class={"py-4 md:p-4 " + cardSizeClass}>
             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
 
-                    
-                                 {/**   <CoverImage slug={post.slug} title={post.title} url={post.coverImage.url} />*/}
-  
- <img src={imageUrl} alt="blog" class="lg:h-48 md:h-36 w-full object-cover object-center" />
+
+                {/**   <CoverImage slug={post.slug} title={post.title} url={post.coverImage.url} />*/}
+
+                <img src={imageUrl} alt="blog" class="lg:h-48 md:h-36 w-full object-cover object-center" />
                 <div class="p-6">
-                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-300 mb-1">CATEGORY</h2>
-                    <h1 class="title-font text-lg font-medium text-th-accent-medium mb-3">{(post.category.name ? post.category.name : 'Unclassified')}
+                    <h2 class="tracking-widest text-xs title-font font-medium  text-th-accent-medium  mb-1">{(post.category.name ? post.category.name.toUpperCase() : 'Unclassified')}</h2>
+                    <h1 class="title-font text-2xl font-medium mb-3 text-th-primary-dark ">{post.title}
                     </h1>
                     <p class="lg:h-36 md:h-36 w-full text-th-primary-medium leading-relaxed mb-3">{excerptDisplay}</p>
                     <div class="flex items-center flex-wrap">
-                        <a href={process.env.BACKEND_URL+`/posts/${post.slug}`} class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                        <a href={process.env.BACKEND_URL + `/posts/${post.slug}`} class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
                             <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 ml-2">
                                 <path d="M5 12h14">
                                 </path>

@@ -12,6 +12,7 @@ module.exports = {
         fuchsia: colors.fuchsia,
         pink: colors.pink,
         teal: colors.teal,
+        violet: colors.violet,
         'th-background': 'var(--background)',
         'th-background-secondary': 'var(--background-secondary)',
         'th-foreground': 'var(--foreground)',

@@ -14,10 +14,10 @@ export default function PostHeader({ title, coverImage, date, author, heroCta })
               <Avatar className="mt-8" name={author.name} picture={author.picture} />
             </div>
 
-            {heroCta ? <p className="text-sm mt-4 text-th-primary-light mb-4 w-3/5">{heroCta.subtitle.subTitle}</p> : null}
+            {heroCta ? <p className="text-sm mt-4 text-th-primary-light mb-4 w-3/5">{heroCta.title.subTitle}</p> : null}
             <div className="flex w-full md:justify-start justify-center items-end">
 
-              <button className="inline-flex text-white bg-th-accent-light border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">{heroCta.heading}</button>
+              <button className="inline-flex text-white bg-th-accent-light border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">{heroCta.title.title}</button>
             </div>
 
 
