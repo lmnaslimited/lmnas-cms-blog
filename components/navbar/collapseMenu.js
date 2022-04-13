@@ -22,7 +22,7 @@ export default function CollapseMenu({ subMenus }) {
         {
           subMenus.map((subMenu) => (
             <li className="">
-              <a href={process.env.BACKEND_URL + `/category/${subMenu.slug}`} className="bg-th-primary-dark text-th-background-secondary rounded-t  hover:bg-pink-500 dark:hover:text-pink-500 py-2 px-4 block whitespace-no-wrap">
+              <a href={process.env.BACKEND_URL + `/category/${subMenu.slug}`} className="bg-th-primary-dark text-th-background-secondary   hover:bg-pink-500 dark:hover:text-pink-500 py-2 px-4 block whitespace-no-wrap">
                 {subMenu.name}
               </a>
             </li>))
