@@ -7,6 +7,7 @@ export default async function preview(req, res) {
     req.query.secret !== process.env.STRAPI_PREVIEW_SECRET ||
     !req.query.slug
   ) {
+    console.log(req.query.slug)
     return res.status(401).json({ message: 'Invalid token' })
   }
 

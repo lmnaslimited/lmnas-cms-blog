@@ -1,3 +1,4 @@
+import Link from "next/link"
 import CoverImage from "../cover-image"
 
 export default function PostCard({ size, imageSrc, post }) {
@@ -12,12 +13,17 @@ export default function PostCard({ size, imageSrc, post }) {
             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
 
 
-                {/**   <CoverImage slug={post.slug} title={post.title} url={post.coverImage.url} />*/}
+                 <CoverImage slug={post.slug} title={post.title} url={post.coverImage.url} height={1500  / parseInt(size)} />
 
-                <img src={imageUrl} alt="blog" class="lg:h-48 md:h-36 w-full object-cover object-center" />
+               {/*} <img src={imageUrl} alt="blog" class="lg:h-48 md:h-36 w-full object-cover object-center" /> */}
                 <div class="p-6">
                     <h2 class="tracking-widest text-xs title-font font-medium  text-th-accent-medium  mb-1">{(post.category.name ? post.category.name.toUpperCase() : 'Unclassified')}</h2>
-                    <h1 class="title-font text-2xl font-medium mb-3 text-th-primary-dark ">{post.title}
+
+                    <h1 class="title-font text-2xl font-medium mb-3 text-th-primary-dark ">
+
+                        <Link href={process.env.BACKEND_URL + `/posts/${post.slug}`}>
+                            <a className="hover:underline">{post.title}</a>
+                        </Link>
                     </h1>
                     <p class="lg:h-36 md:h-36 w-full text-th-primary-medium leading-relaxed mb-3">{excerptDisplay}</p>
                     <div class="flex items-center flex-wrap">

@@ -1,11 +1,10 @@
 .markdown {
-  @apply text-lg text-th-primary-medium leading-relaxed;
+  @apply text-lg text-th-primary-medium leading-10;
 }
 
 .markdown p,
 .markdown ul,
 .markdown li,
-.markdown ol,
 .markdown img {
   @apply my-12 justify-center
 }
@@ -22,3 +21,26 @@
 .markdown h3 {
   @apply text-xl  mt-3 mb-0 leading-snug;
 }
+
+.markdown ol { 
+ @apply ol-d
+}
+.markdown ul { 
+  @apply ul-d
+ }
+.markdown li { 
+  @apply mx-10 my-2
+ }
+
+ .markdown p { 
+  @apply my-8
+ }
+
+.ol-d {
+  list-style-type: decimal;
+}
+.ul-d {
+  list-style-type: disc;
+}
+
+
