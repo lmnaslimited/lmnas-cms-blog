@@ -7,7 +7,7 @@ const DynamicHeroIcon = (props) => {
 
   return (
     <>
-      <TheIcon className="h-6 w-6 " aria-hidden="true" />
+      <TheIcon className="h-7 w-7 " aria-hidden="true" />
     </>
   )
 }
