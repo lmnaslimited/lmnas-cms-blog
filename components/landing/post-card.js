@@ -17,9 +17,10 @@ export default function PostCard({ size, imageSrc, post }) {
 
                {/*} <img src={imageUrl} alt="blog" class="lg:h-48 md:h-36 w-full object-cover object-center" /> */}
                 <div class="p-6">
+               
                     <h2 class="tracking-widest text-xs title-font font-medium  text-th-accent-medium  mb-1">{(post.category.name ? post.category.name.toUpperCase() : 'Unclassified')}</h2>
-
-                    <h1 class="title-font text-2xl font-medium mb-3 text-th-primary-dark ">
+                    <img src="/lmnas-logo-380x380.jpeg" className="w-8 h-8 rounded-full mr-4 inline" />
+                    <h1 class="title-font text-2xl font-medium mb-3 text-th-primary-dark inline ">
 
                         <Link href={process.env.BACKEND_URL + `/posts/${post.slug}`}>
                             <a className="hover:underline">{post.title}</a>

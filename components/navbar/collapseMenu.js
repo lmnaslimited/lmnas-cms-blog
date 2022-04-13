@@ -9,7 +9,7 @@ export default function CollapseMenu({ subMenus }) {
       }}>
       <div className="block  lg:inline-block text-th-primary-medium hover:text-th-accent-medium">
         <svg
-          className="fill-current h-4 w-4 text-th-primary-dark  dark:hover:text-pink-500  hover:text-pink-500"
+          className="fill-current h-4 w-4 ml-4 text-th-primary-dark  dark:hover:text-pink-500  hover:text-pink-500"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
         >
@@ -18,11 +18,11 @@ export default function CollapseMenu({ subMenus }) {
           />
         </svg>
       </div>
-      <ul className={"absolute md:h-20 pt-1 group-hover:block" + (collapse ? hiddenClass : null)}>
+      <ul className={"absolute -ml-8 py-20 md:h-20 pt-1 group-hover:block" + (collapse ? hiddenClass : null)}>
         {
           subMenus.map((subMenu) => (
             <li className="">
-              <a href={process.env.BACKEND_URL + `/category/${subMenu.slug}`} className="bg-th-primary-dark text-th-background-secondary   hover:bg-pink-500 dark:hover:text-pink-500 py-2 px-4 block whitespace-no-wrap">
+              <a href={process.env.BACKEND_URL + `/category/${subMenu.slug}`} className="px-12 bg-th-primary-light text-th-background-secondary   hover:bg-pink-500 dark:hover:text-pink-500 py-2 px-4 block whitespace-no-wrap">
                 {subMenu.name}
               </a>
             </li>))
