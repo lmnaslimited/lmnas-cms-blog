@@ -8,7 +8,7 @@ export default function SubscribeCard({ size, imageSrc, post }) {
     //const categoryUpper = category.toUpperCase()
     return (
         <div class={"py-4 md:p-4 " + cardSizeClass}>
-            <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden bg-violet-400">
+            <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden bg-purple-400">
                 <h1 class="text-5xl p-5 font-medium text-center text-white title-font mb-2 ">Subscribe us to get our Latest Posts and Newsletters
                 </h1>
                 {/**  <Script src="https://cx.lmnas.com/form/generate.js?id=3"  />

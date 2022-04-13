@@ -5,25 +5,66 @@ export default function Footer() {
   return (
     <footer className="bg-accent-1 border-t border-accent-2">
       <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/basic-features/pages"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
-          </div>
-        </div>
+      <div className="grid lg:grid-rows-1 lg:grid-cols-3 grid-rows-2 grid-cols-2 bg-gradient-to-r from-midnight via-th-background-secondary to-gray-midnight">
+
+<div className="lg:row-span-1 lg:col-span-1 row-span-1 col-span-2 mx-5 px-5 my-6  py-4">
+<h2 className="text-md md:text-lg lg:text-xl font-semibold  text-th-primary-medium">About Us</h2>
+  <p className="mt-2 md:w-4/5 lg:mt-10 w-full font-medium text-th-primary-dark text-md lg:text-lg md:text-md" >LMNAs, the most adaptable business solution for growing small and midmarket organizations. We create solutions with our uniquely deep knowledge of the industries we serve.</p>
+</div>
+<div className="lg:row-span-1 row-span-1 col-span-1 mx-2 px-2 my-5 py-5">
+  <h2 className="text-md md:text-lg lg:text-xl font-semibold ml-4   text-th-primary-medium">Menu</h2>
+  <nav className="list-none mb-10 lg:mt-10 ">
+    <li className="md:px-6 md::w-3/4 xl:w-3/5">
+      <a href="#" className="text-gray-900">
+        <h1 className="text-sm md:text-lg -ml-2 font-medium text-th-accent-medium inline">Home</h1></a>
+    </li>
+    <li className="md:px-6 mb-4 md::w-3/4 xl:w-3/5 ">
+      <a href="#" className="text-gray-900">
+        <h1 className="text-sm md:text-lg -ml-2 font-medium text-th-accent-medium  inline ">Career </h1></a>
+    </li>
+    <li className=" -mt-4 md:px-6 mb-4 md::w-3/4 xl:w-3/5 ">
+      <a href="#" className="text-gray-900">
+        <h1 className="text-sm md:text-lg -ml-2 font-medium text-th-accent-medium  inline ">Contact </h1></a>
+    </li>
+
+  </nav>
+</div>
+
+<div className="lg:row-span-1 row-span-1 col-span-1 mx-5 px-5 my-5 py-5">
+  <h2 className="font-semibold text-md md:text-lg lg:text-xl text-th-primary-medium md:mr-5">Connect Us</h2>
+  <nav className="mt-2 lg:mt-10">
+    <div className="grid grid-cols-5 gap-4 lg:gap-1 md:gap-1">
+      <div className="mr-2"><a href="#"> <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 64 64" className="w-8 h-8 shadow-lg transform transition hover:-translate-y-1"><linearGradient id="JOZq0V4XPxMzNaLCE5XPGa_44003_gr1" x1="37.646" x2="37.646" y1="14.5" y2="56.878" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#6dc7ff"></stop><stop offset="1" stopColor="#e6abff"></stop></linearGradient><path fill="url(#JOZq0V4XPxMzNaLCE5XPGa_44003_gr1)" d="M42,56V38h5.358l0.934-8H42v-4.457c0-2.097-0.131-3.527,2.877-3.527L48,22.014v-6.479 c-1-0.088-2.487-0.285-5.136-0.285c-5.531,0-8.864,3.376-8.864,9.576V30h-7v8h7v18H42z"></path><linearGradient id="JOZq0V4XPxMzNaLCE5XPGb_44003_gr2" x1="32" x2="32" y1="6.833" y2="58.017" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#1a6dff"></stop><stop offset="1" stopColor="#c822ff"></stop></linearGradient><path fill="url(#JOZq0V4XPxMzNaLCE5XPGb_44003_gr2)" d="M50,57H14c-3.859,0-7-3.141-7-7V14c0-3.859,3.141-7,7-7h36c3.859,0,7,3.141,7,7v36 C57,53.859,53.859,57,50,57z M14,9c-2.757,0-5,2.243-5,5v36c0,2.757,2.243,5,5,5h36c2.757,0,5-2.243,5-5V14c0-2.757-2.243-5-5-5H14z"></path></svg></a></div>
+      <div className="mr-2"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 64 64" className="w-8 h-8 shadow-lg transform transition hover:-translate-y-1"><linearGradient id="SUJNhpmDQDF27Y3OfwgfYa_44019_gr1" x1="19" x2="19" y1="24.858" y2="49.041" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#6dc7ff"></stop><stop offset="1" stopColor="#e6abff"></stop></linearGradient><path fill="url(#SUJNhpmDQDF27Y3OfwgfYa_44019_gr1)" fillRule="evenodd" d="M22 48L22 26 16 26 16 48 22 48z" clipRule="evenodd"></path><linearGradient id="SUJNhpmDQDF27Y3OfwgfYb_44019_gr2" x1="19.382" x2="19.382" y1="15.423" y2="23.341" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#6dc7ff"></stop><stop offset="1" stopColor="#e6abff"></stop></linearGradient><path fill="url(#SUJNhpmDQDF27Y3OfwgfYb_44019_gr2)" fillRule="evenodd" d="M19.358,23c2.512,0,4.076-1.474,4.076-3.554 c-0.047-2.126-1.564-3.649-4.028-3.649c-2.465,0-4.076,1.475-4.076,3.601c0,2.08,1.563,3.602,3.981,3.602H19.358L19.358,23z" clipRule="evenodd"></path><linearGradient id="SUJNhpmDQDF27Y3OfwgfYc_44019_gr3" x1="37.386" x2="37.386" y1="14.125" y2="49.525" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#6dc7ff"></stop><stop offset="1" stopColor="#e6abff"></stop></linearGradient><path fill="url(#SUJNhpmDQDF27Y3OfwgfYc_44019_gr3)" fillRule="evenodd" d="M26.946,48H34V35.911c0-0.648,0.122-1.295,0.313-1.758 c0.52-1.295,1.877-2.635,3.867-2.635c2.607,0,3.821,1.988,3.821,4.901V48h6V35.588c0-6.657-3.085-9.498-7.826-9.498 c-3.886,0-5.124,1.91-6.072,3.91H34v-4h-7.054c0.095,2-0.175,22-0.175,22H26.946z" clipRule="evenodd"></path><linearGradient id="SUJNhpmDQDF27Y3OfwgfYd_44019_gr4" x1="32" x2="32" y1="6.5" y2="57.5" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#1a6dff"></stop><stop offset="1" stopColor="#c822ff"></stop></linearGradient><path fill="url(#SUJNhpmDQDF27Y3OfwgfYd_44019_gr4)" d="M50,57H14c-3.859,0-7-3.141-7-7V14c0-3.859,3.141-7,7-7h36c3.859,0,7,3.141,7,7v36 C57,53.859,53.859,57,50,57z M14,9c-2.757,0-5,2.243-5,5v36c0,2.757,2.243,5,5,5h36c2.757,0,5-2.243,5-5V14c0-2.757-2.243-5-5-5H14z"></path></svg></a></div>
+      <div className="mr-2"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 64 64" className="w-8 h-8 shadow-lg transform transition hover:-translate-y-1"><linearGradient id="jm_nAfYbxsVmTlYr5N4x9a_43625_gr1" x1="32" x2="32" y1="6.667" y2="57.872" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#1a6dff"></stop><stop offset="1" stopColor="#c822ff"></stop></linearGradient><path fill="url(#jm_nAfYbxsVmTlYr5N4x9a_43625_gr1)" d="M44,57H20c-7.168,0-13-5.832-13-13V20c0-7.168,5.832-13,13-13h24c7.168,0,13,5.832,13,13v24 C57,51.168,51.168,57,44,57z M20,9C13.935,9,9,13.935,9,20v24c0,6.065,4.935,11,11,11h24c6.065,0,11-4.935,11-11V20 c0-6.065-4.935-11-11-11H20z"></path><linearGradient id="jm_nAfYbxsVmTlYr5N4x9b_43625_gr2" x1="32" x2="32" y1="18.167" y2="45.679" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#6dc7ff"></stop><stop offset="1" stopColor="#e6abff"></stop></linearGradient><path fill="url(#jm_nAfYbxsVmTlYr5N4x9b_43625_gr2)" d="M32,45c-7.168,0-13-5.832-13-13c0-7.168,5.832-13,13-13c7.168,0,13,5.832,13,13 C45,39.168,39.168,45,32,45z M32,23c-4.962,0-9,4.038-9,9c0,4.963,4.038,9,9,9c4.963,0,9-4.037,9-9C41,27.038,36.963,23,32,23z"></path><linearGradient id="jm_nAfYbxsVmTlYr5N4x9c_43625_gr3" x1="46" x2="46" y1="12.75" y2="23.049" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#6dc7ff"></stop><stop offset="1" stopColor="#e6abff"></stop></linearGradient><path fill="url(#jm_nAfYbxsVmTlYr5N4x9c_43625_gr3)" d="M46 15A3 3 0 1 0 46 21A3 3 0 1 0 46 15Z"></path></svg></a></div>
+      <div className="mr-2"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 64 64" className="w-8 h-8 shadow-lg transform transition hover:-translate-y-1"><linearGradient id="PMWUiMSnUf2R_PPJ6rqZea_44112_gr1" x1="32" x2="32" y1="10" y2="54.751" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#1a6dff"></stop><stop offset="1" stopColor="#c822ff"></stop></linearGradient><path fill="url(#PMWUiMSnUf2R_PPJ6rqZea_44112_gr1)" d="M32,53.001c-6.358,0-12.716-0.195-19.299-0.584c-4.96-0.293-8.961-4.242-9.308-9.187 c-0.521-7.452-0.521-15.009-0.001-22.46c0.348-4.945,4.349-8.895,9.309-9.188c13.167-0.778,25.433-0.778,38.598,0 c4.96,0.293,8.961,4.242,9.308,9.187c0.521,7.452,0.521,15.009,0.001,22.46c-0.348,4.945-4.349,8.895-9.309,9.188l0,0 C44.716,52.806,38.358,53.001,32,53.001z M51.182,50.421l0.059,0.998L51.182,50.421c3.959-0.234,7.153-3.386,7.431-7.331 c0.515-7.358,0.515-14.821-0.001-22.181c-0.276-3.944-3.471-7.096-7.43-7.33c-13.088-0.773-25.275-0.773-38.363,0 c-3.959,0.234-7.153,3.386-7.431,7.331c-0.515,7.358-0.515,14.821,0.001,22.181c0.276,3.944,3.471,7.096,7.43,7.33 C25.906,51.194,38.094,51.194,51.182,50.421z"></path><linearGradient id="PMWUiMSnUf2R_PPJ6rqZeb_44112_gr2" x1="31.72" x2="31.72" y1="24.25" y2="39.252" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#6dc7ff"></stop><stop offset="1" stopColor="#e6abff"></stop></linearGradient><path fill="url(#PMWUiMSnUf2R_PPJ6rqZeb_44112_gr2)" d="M25 39.84L25 24.16 38.44 32z"></path><linearGradient id="PMWUiMSnUf2R_PPJ6rqZec_44112_gr3" x1="32.212" x2="32.212" y1="10" y2="54.751" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#1a6dff"></stop><stop offset="1" stopColor="#c822ff"></stop></linearGradient><path fill="url(#PMWUiMSnUf2R_PPJ6rqZec_44112_gr3)" d="M24,41.581V22.419L40.425,32L24,41.581z M26,25.901v12.197L36.456,32L26,25.901z"></path></svg></a></div>
+    </div>
+    <ul>
+    <li className="rounded-full mt-4   md::w-3/4 xl:w-3/4">
+              <a href="#" className="text-gray-900"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 64 64" className=" rounded-full w-8 h-8  my-2 lg:mr-2 inline shadow-2xl transform transition hover:-translate-y-2"><linearGradient id="SVGID_1__zfzzkSElGxHN_gr1" x1="20.43" x2="29.588" y1="20.594" y2="20.594" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#6dc7ff"></stop><stop offset="1" stopColor="#e6abff"></stop></linearGradient><path fill="url(#SVGID_1__zfzzkSElGxHN_gr1)" d="M29,24.6L29,24.6c-0.8,0.8-2,0.8-2.8,0L21,19.4c-0.8-0.8-0.8-2,0-2.8l0,0c0.8-0.8,2-0.8,2.8,0l5.2,5.2	C29.8,22.5,29.8,23.8,29,24.6z"></path><linearGradient id="SVGID_2__zfzzkSElGxHN_gr2" x1="38.962" x2="47.942" y1="38.995" y2="38.995" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#6dc7ff"></stop><stop offset="1" stopColor="#e6abff"></stop></linearGradient><path fill="url(#SVGID_2__zfzzkSElGxHN_gr2)" d="M47.4,42.9L47.4,42.9c-0.8,0.8-2,0.8-2.8,0l-5-5c-0.8-0.8-0.8-2,0-2.8l0,0c0.8-0.8,2-0.8,2.8,0l5,5	C48.1,40.9,48.1,42.1,47.4,42.9z"></path><linearGradient id="SVGID_3__zfzzkSElGxHN_gr3" x1="32" x2="32" y1="5.596" y2="51.515" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#1a6dff"></stop><stop offset="1" stopColor="#c822ff"></stop></linearGradient><path fill="url(#SVGID_3__zfzzkSElGxHN_gr3)" d="M50,9H14c-2.8,0-5,2.2-5,5v36c0,2.8,2.2,5,5,5h36c2.8,0,5-2.2,5-5V14C55,11.2,52.8,9,50,9z M53,50 c0,1.7-1.3,3-3,3H14c-1.7,0-3-1.3-3-3V14c0-1.7,1.3-3,3-3h36c1.7,0,3,1.3,3,3V50z"></path><linearGradient id="SVGID_4__zfzzkSElGxHN_gr4" x1="31.999" x2="31.999" y1="5.596" y2="51.515" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#1a6dff"></stop><stop offset="1" stopColor="#c822ff"></stop></linearGradient><path fill="url(#SVGID_4__zfzzkSElGxHN_gr4)" d="M48.1,39.4l-5-5c-0.2-0.2-0.3-0.3-0.5-0.4c-0.5-0.3-1.1-0.5-1.8-0.5c0,0,0,0,0,0c-0.8,0-1.6,0.3-2.2,0.9 l-3.3,3.3c-3.9-2-6.9-5.1-9-9l3.3-3.3c0.1-0.1,0.3-0.3,0.4-0.5c0.3-0.5,0.5-1.1,0.5-1.7c0-0.6-0.2-1.2-0.5-1.7 c-0.1-0.2-0.2-0.3-0.4-0.5l-5.1-5.1c-0.3-0.3-0.6-0.5-1-0.7c-0.2-0.1-0.4-0.1-0.6-0.2c-0.2,0-0.4-0.1-0.6-0.1c0,0,0,0,0,0 c-0.8,0-1.6,0.3-2.2,0.9l-3,3c-2.4,2.4-2.9,6.1-1.1,9c5,8.2,11.7,14.9,20,20c1.1,0.7,2.5,1.1,3.8,1.1c2,0,3.8-0.8,5.2-2.2l3-3 c1.1-1.1,1.2-2.7,0.4-3.9C48.4,39.7,48.2,39.5,48.1,39.4z M21.7,17.3c0.2-0.2,0.4-0.3,0.7-0.3c0.1,0,0.1,0,0.2,0 c0.2,0,0.4,0.1,0.5,0.3l5.2,5.2c0.2,0.2,0.3,0.4,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7c-0.4,0.4-1,0.4-1.4,0l-5.2-5.2 C21.3,18.3,21.3,17.7,21.7,17.3z M43.6,45.4c-1,1-2.4,1.6-3.8,1.6c-1,0-1.9-0.3-2.8-0.8c-8-4.8-14.4-11.3-19.3-19.3 c-1.3-2.1-0.9-4.8,0.8-6.6l1.1-1.1c0.1,0.3,0.3,0.6,0.6,0.9l5.2,5.2c0.2,0.2,0.5,0.4,0.8,0.6l-1.4,1.4c-0.6,0.6-0.7,1.4-0.3,2.1 c2.3,4.4,5.6,7.8,10,10c0.7,0.4,1.6,0.2,2.1-0.3l1.5-1.5c0.1,0.4,0.4,0.7,0.7,1l5,5c0.3,0.3,0.6,0.5,1,0.6L43.6,45.4z M46.6,42.2 c-0.4,0.4-1,0.4-1.4,0l-5-5C40.1,37,40,36.8,40,36.5c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.5-0.3,0.7-0.3c0.1,0,0.3,0,0.4,0.1 c0,0,0,0,0,0c0.1,0,0.1,0.1,0.2,0.1l5.1,5.1c0.1,0.1,0.1,0.2,0.2,0.3C47,41.5,46.9,41.9,46.6,42.2z"></path></svg>
+                <h1 className="text-sm md:text-lg lg:ml-0 font-medium inline text-th-primary-dark">+91 1234567890</h1></a>
+            </li>
+            <li className="rounded-full  mb-4 md::w-3/4 xl:w-3/4 ">
+              <a href="#" className="text-gray-900"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 64 64" className=" rounded-full w-6 h-6 my-2 lg:mr-2 inline shadow-2xl transform transition hover:-translate-y-2"><linearGradient id="X8PQgv_hN2z14HAU6EeM8a_48165_gr1" x1="32" x2="32" y1="12" y2="52" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#1a6dff"></stop><stop offset="1" stopColor="#c822ff"></stop></linearGradient><path fill="url(#X8PQgv_hN2z14HAU6EeM8a_48165_gr1)" d="M58,16.82h-0.01C57.94,14.15,55.81,12,53.2,12H10.8c-2.61,0-4.74,2.15-4.79,4.82H6 c0,0.01,0.01,0.02,0.01,0.04S6,16.89,6,16.91v30.18C6,49.8,8.16,52,10.8,52h42.4c2.64,0,4.8-2.2,4.8-4.91V16.91 c0-0.02-0.01-0.03-0.01-0.05S58,16.83,58,16.82z M50.67,14L32,27.11L13.33,14H50.67z M10.03,14.13L32,29.56l21.97-15.43 c1.15,0.34,2,1.42,2.02,2.72c-0.03,0.64-0.87,1.44-1.3,1.74L32,34.77L9.3,18.58c-0.42-0.29-1.26-1.09-1.29-1.73 C8.03,15.55,8.88,14.47,10.03,14.13z M12,23v27h-1.2C9.26,50,8,48.69,8,47.09V20.11c0.07,0.05,0.12,0.09,0.14,0.11L12.05,23H12z M50,50H14V24.39l18,12.84l18-12.84V50z M56,47.09c0,1.6-1.26,2.91-2.8,2.91H52V23h-0.05l3.9-2.78c0.02-0.02,0.08-0.06,0.15-0.11 V47.09z"></path><linearGradient id="X8PQgv_hN2z14HAU6EeM8b_48165_gr2" x1="53.975" x2="53.975" y1="20.11" y2="50" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#6dc7ff"></stop><stop offset="1" stopColor="#e6abff"></stop></linearGradient><path fill="url(#X8PQgv_hN2z14HAU6EeM8b_48165_gr2)" d="M56,20.11v26.98c0,1.6-1.26,2.91-2.8,2.91H52V23h-0.05l3.9-2.78 C55.87,20.2,55.93,20.16,56,20.11z"></path><linearGradient id="X8PQgv_hN2z14HAU6EeM8c_48165_gr3" x1="10.025" x2="10.025" y1="20.11" y2="50" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#6dc7ff"></stop><stop offset="1" stopColor="#e6abff"></stop></linearGradient><path fill="url(#X8PQgv_hN2z14HAU6EeM8c_48165_gr3)" d="M12.05,23H12v27h-1.2C9.26,50,8,48.69,8,47.09V20.11c0.07,0.05,0.12,0.09,0.14,0.11L12.05,23z"></path><linearGradient id="X8PQgv_hN2z14HAU6EeM8d_48165_gr4" x1="32" x2="32" y1="14.13" y2="34.77" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stopColor="#6dc7ff"></stop><stop offset="1" stopColor="#e6abff"></stop></linearGradient><path fill="url(#X8PQgv_hN2z14HAU6EeM8d_48165_gr4)" d="M55.99,16.85c-0.03,0.64-0.87,1.44-1.3,1.74L32,34.77L9.3,18.58 c-0.42-0.29-1.26-1.09-1.29-1.73c0.02-1.3,0.87-2.38,2.02-2.72L32,29.56l21.97-15.43C55.12,14.47,55.97,15.55,55.99,16.85z"></path></svg>
+                <h1 className="text-sm md:text-lg lg:ml-0 md:ml-8 font-medium  inline text-th-primary-dark">xyz123@gmail.com </h1></a>
+            </li>
+            </ul>
+
+  </nav>
+  <nav className="list-none mb-10 lg:mt-10 ">
+           
+          </nav>
+</div>
+
+</div>
+
+<div className=" text-center mx-auto py-4 px-40 flex -ml-52 -mr-52 flex-col sm:flex-row bg-th-accent-medium  opacity-80">
+
+<p className="text-white font-semibold text-lg text-center">© 2021 
+  <a href="#" rel="noopener noreferrer" className="text-white ml-1" target="_blank">Designed By LMNAs Limited</a>
+</p>
+
+</div>
       </Container>
     </footer>
   )
