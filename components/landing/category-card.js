@@ -9,8 +9,8 @@ export default function CategoryCard({ svg, category }) {
     <div className="py-4 md:p-4 md:w-1/4 sm:w-1/2  w-full">
 
       <Link href={process.env.BACKEND_URL + `/category/${category.slug}`}>
-        <button type="button" className="bg-th-primary-light shadow-sm text-th-background inline-flex  py-3 px-5 rounded-lg items-center hover:bg-th-accent-medium hover:text-th-primary-light focus:outline-none">
-        <div className="bg-purple-400 shadow-sm text-th-background  py-6 -mt-3 -mb-3 px-2 -ml-5  items-center hover:bg-th-accent-medium hover:text-th-primary-light focus:outline-none">
+        <button type="button" className="bg-th-primary-light shadow-sm text-th-background inline-flex  pt-3 pb-2 px-5 rounded-lg items-center hover:bg-th-accent-medium hover:text-th-primary-light focus:outline-none">
+        <div className="bg-purple-400 shadow-sm text-th-background  py-6 -mt-4 -mb-3 px-2 -ml-5  items-center hover:bg-th-accent-medium hover:text-th-primary-light focus:outline-none">
          </div>
           <DynamicHeroIcon icon={'CogIcon'} />
           {/* <div dangerouslySetInnerHTML={{ __html: category.svg }} /> 
