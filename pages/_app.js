@@ -25,9 +25,10 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider>
       <div className='bg-th-background'>
         <Component {...pageProps} />
+       
         </div>
       </ThemeProvider>
-      
+   
     </AppContext.Provider>
   )
 }

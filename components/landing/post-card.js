@@ -19,17 +19,16 @@ export default function PostCard({ size, imageSrc, post }) {
                 <div class="p-6">
                
                     <h2 class="tracking-widest text-xs title-font font-medium  text-th-accent-medium  mb-1">{(post.category.name ? post.category.name.toUpperCase() : 'Unclassified')}</h2>
-                    <img src="/lmnas-logo-380x380.jpeg" className="w-8 h-8 rounded-full mr-4 inline" />
-                    <h1 class="title-font text-2xl font-medium mb-3 text-th-primary-dark inline ">
+                    <h1 class="title-font text-2xl font-medium mb-3 text-gray-100 inline ">
 
                         <Link href={process.env.BACKEND_URL + `/posts/${post.slug}`}>
                             <a className="hover:underline">{post.title}</a>
                         </Link>
                     </h1>
-                    <p class="lg:h-36 md:h-36 w-full text-th-primary-medium leading-relaxed mb-3">{excerptDisplay}</p>
+                    <p class="lg:h-36 md:h-36 w-full text-th-primary-dark leading-relaxed mb-3">{excerptDisplay}</p>
                     <div class="flex items-center flex-wrap">
                         <a href={process.env.BACKEND_URL + `/posts/${post.slug}`} class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
-                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 ml-2">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" class="w-4 h-4 ml-2">
                                 <path d="M5 12h14">
                                 </path>
                                 <path d="M12 5l7 7-7 7">
@@ -42,7 +41,7 @@ export default function PostCard({ size, imageSrc, post }) {
                             </circle>
                         </svg>1.2K
                         </span>
-                        <span class="text-gray-400 inline-flex items-center leading-none text-sm"><svg stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="w-4 h-4 mr-1">
+                        <span class="text-gray-400 inline-flex items-center leading-none text-sm"><svg stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="w-4 h-4 mr-1">
                             <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
                             </path>
                         </svg>6

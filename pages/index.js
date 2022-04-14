@@ -5,6 +5,7 @@ import { getAllPostsForHome } from '@/lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 import { strapiAPI } from '@/lib/api'
+import FooterBanner from './posts/footer-banner'
 
 export default function Index({ allPosts, preview, categories }) {
 
@@ -24,7 +25,7 @@ export default function Index({ allPosts, preview, categories }) {
             
           </Layout>
         </Container>
-
+        <FooterBanner/>
       </div>
     </>
   )

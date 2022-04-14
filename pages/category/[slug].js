@@ -3,10 +3,10 @@ import MoreStories from '@/components/more-stories'
 import HeroPost from '@/components/hero-post'
 import Intro from '@/components/intro'
 import Layout from '@/components/layout'
-import { getAllPostsForHome } from '@/lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 import { strapiAPI } from '@/lib/api'
+import FooterBanner from 'pages/posts/footer-banner'
 
 
 //import Seo from "../../components/seo"
@@ -33,9 +33,9 @@ const Category = ({ category, preview, categories, authors }) => {
   ))
   const author = { name: heroPost.author, picture: authors[0].picture }
   return (
+    <>
+      <Container>
 
-    <Container>
-      <>
         <Layout preview={preview} categories={categories} >
 
           <Head>
@@ -56,10 +56,9 @@ const Category = ({ category, preview, categories, authors }) => {
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
 
         </Layout>
-      </>
-    </Container>
-
-
+      </Container>
+      <FooterBanner />
+    </>
   )
 }
 

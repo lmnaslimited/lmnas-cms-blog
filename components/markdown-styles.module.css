@@ -29,7 +29,7 @@
   @apply ul-d
  }
 .markdown li { 
-  @apply mx-10 my-2
+  @apply mx-2 md:mx-10 my-2
  }
 
  .markdown p { 
