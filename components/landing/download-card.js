@@ -5,7 +5,6 @@ export default function DownloadCard({ size, imageSrc, post }) {
 
     //const categoryUpper = category.toUpperCase()
     return (
-        <div class={"py-4 md:p-4 " + cardSizeClass}>
             <div class="h-full border-2 border-th-primary-medium border-opacity-60 rounded-lg overflow-hidden bg-th-accent-medium">
 
                 <h1 class="text-5xl p-5 font-medium text-center text-th-primary-light title-font mb-2 ">Download Case Studies form Our Resource centre
@@ -27,6 +26,5 @@ export default function DownloadCard({ size, imageSrc, post }) {
                     <button class="absolute top-0 bg-purple-500 text-th-primary-light p-2 rounded hover:bg-th-accent-medium m-20 transform transition hover:scale-105 duration-300 ease-in-out">Download Now</button>
                 </div>
             </div>
-        </div>
     )
 }

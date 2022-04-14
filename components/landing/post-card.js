@@ -12,12 +12,13 @@ export default function PostCard({ size, imageSrc, post }) {
     //const categoryUpper = category.toUpperCase()
 
     return (
-        <div className={"py-4 md:p-4 " + cardSizeclass}>
+        <>
+       {/* <div className={"py-4 md:p-4 " + cardSizeclass}> */}
             <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
 
-                <div classNameName="object-cover object-center lg:h-48 md:h-36 w-full">
+           
                     <CoverImage slug={post.slug} title={post.title} url={post.coverImage.url} width={720 * parseInt(size)} height={400} />
-                </div>
+
 
                 <div className="p-6">
 
@@ -52,7 +53,7 @@ export default function PostCard({ size, imageSrc, post }) {
                     </div>
                 </div>
             </div>
-        </div>
+            </>
 
 
     )
