@@ -13,8 +13,8 @@ export default function Index({ allPosts, preview, categories }) {
     return (
         <>
             <section classNameName="body-font">
-           
-            {/*<Intro title='LMNAs Insight' /> */}
+
+                {/*<Intro title='LMNAs Insight' /> */}
                 {categories && (<Categories categories={categories} />)}
 
                 {heroPost && (
@@ -27,12 +27,15 @@ export default function Index({ allPosts, preview, categories }) {
                         excerpt={heroPost.excerpt}
                     />
                 )}
-                <section className="text-gray-600 body-font">
+                <section className="body-font">
                     <div className="container px-5 mx-auto py-12">
                         <div className="flex flex-wrap -m-4">
                             <PostCard post={allPosts[1] ? allPosts[1] : heroPost} size='1/3' />
                             <PostCard post={allPosts[2] ? allPosts[2] : heroPost} size='1/3' />
                             <SubscribeCard post={heroPost} size='1/3' />
+                            <DownloadCard imageSrc={"https://res.cloudinary.com/lmnas/image/upload/v1649901729/download_card_5821x3886_d1e1c9daee.jpg"} size='1/3' />
+                            <PostCard post={allPosts[3] ? allPosts[3] : heroPost} size='1/3' />
+                            <PostCard post={allPosts[4] ? allPosts[4] : heroPost} size='1/3' />
 
                         </div>
                     </div>
@@ -42,8 +45,7 @@ export default function Index({ allPosts, preview, categories }) {
             <section className="text-gray-600 body-font">
                 <div className="container px-5 mx-auto py-12">
                     <div className="flex flex-wrap -m-4">
-                        <DownloadCard imageSrc={"https://res.cloudinary.com/lmnas/image/upload/v1649901729/download_card_5821x3886_d1e1c9daee.jpg"} size='1/3'/>
-                        <PostCard post={allPosts[3] ? allPosts[3] : heroPost} size='2/3' />
+
                     </div>
                 </div>
 

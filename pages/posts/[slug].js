@@ -20,37 +20,40 @@ export default function Post({ post, morePosts, preview, categories }) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Container>
-      <Layout preview={preview} categories={categories}>
+    <>
+      <Container>
+        <Layout preview={preview} categories={categories}>
 
-        <Header />
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article>
-              <Head>
-                <title>
-                  {post.title} | {post.category.name} Blog of LMNAs
-                </title>
-                <meta property="og:image" content={post.ogImage.url} />
-              </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-                heroCta={post.herocta}
-              />
-              <PostBody content={post.content} />
-            </article>
-            <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-          </>
-        )}
+          <Header />
+          {router.isFallback ? (
+            <PostTitle>Loading…</PostTitle>
+          ) : (
+            <>
+              <article>
+                <Head>
+                  <title>
+                    {post.title} | {post.category.name} Blog of LMNAs
+                  </title>
+                  <meta property="og:image" content={post.ogImage.url} />
+                </Head>
+                <PostHeader
+                  title={post.title}
+                  coverImage={post.coverImage}
+                  date={post.date}
+                  author={post.author}
+                  heroCta={post.herocta}
+                />
+                <PostBody content={post.content} />
+              </article>
+              <SectionSeparator />
+              {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+            </>
+          )}
 
-      </Layout>
-    </Container>
+        </Layout>
+      </Container>
+      <FooterBanner />
+    </>
   )
 }
 

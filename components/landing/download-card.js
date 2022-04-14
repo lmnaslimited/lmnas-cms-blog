@@ -1,7 +1,7 @@
 import Script from 'next/script'
 import CoverImage from '../cover-image'
 export default function DownloadCard({ size, imageSrc, post }) {
-    const cardSizeClass = ' md:w-' + size
+    const cardSizeClass = ' md:w-full lg:w-' + size
 
     //const categoryUpper = category.toUpperCase()
     return (

@@ -1,6 +1,6 @@
 import Script from 'next/script'
 export default function SubscribeCard({ size, imageSrc, post }) {
-    const cardSizeClass = ' md:w-' + size
+    const cardSizeClass = ' md:w-full lg:w-' + size
 
     const imageUrl = `${post.coverImage.url.startsWith('/') ? process.env.NEXT_PUBLIC_STRAPI_API_URL : ''
         }${post.coverImage.url}`
