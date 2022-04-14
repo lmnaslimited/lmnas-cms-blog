@@ -12,7 +12,7 @@ export default function Index({ allPosts, preview, categories }) {
 
     return (
         <>
-            <section classNameName="body-font">
+            <section className="body-font">
 
                 {/*<Intro title='LMNAs Insight' /> */}
                 {categories && (<Categories categories={categories} />)}
