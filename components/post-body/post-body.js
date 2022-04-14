@@ -1,10 +1,11 @@
 //import markdownStyles from './markdown-styles.module.css'
+import { Fragment } from 'react'
 import markdownStyles from '../../components/markdown-styles.module.css'
 import CtaLink from './cta-link'
 import Why from './why'
 export default function PostBody({ content }) {
   return (
-    <div className="max-w-2xl mx-auto">
+    <div key={fragment.id} className="max-w-2xl mx-auto">
       {content.map((fragment => {
         switch (fragment.__typename) {
           case "ComponentBodySection":

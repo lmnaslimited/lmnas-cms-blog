@@ -4,7 +4,7 @@ const prod = process.env.NODE_ENV === 'production'
 if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
   module.exports = {  
     images: {
-      domains: ["localhost", "res.cloudinary.com"],
+      domains: ["localhost", "res.cloudinary.com", "lmnas.com"],
     },
   };
 } else if (process.env.NODE_ENV === "production") {
