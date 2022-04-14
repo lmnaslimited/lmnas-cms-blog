@@ -13,16 +13,16 @@
   --accent-medium: theme('colors.pink.600');
   --accent-light: theme('colors.pink.500');
 
-  --primary-dark: theme('colors.gray.800');
+  --primary-dark: theme('colors.gray.400');
   --primary-medium: theme('colors.gray.600');
-  --primary-light: theme('colors.gray.400');
+  --primary-light: theme('colors.gray.800');
 }
 
 [data-theme='dark'] {
   --background: theme('colors.gray.800');
   --background-secondary: theme('colors.gray.600');
 
-  --accent-dark: theme('colors.pink.900');
+  --accent-dark: theme('colors.pink.600');
   --accent-medium: theme('colors.pink.500');
   --accent-light: theme('colors.pink.400');
 

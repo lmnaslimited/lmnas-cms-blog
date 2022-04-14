@@ -1,20 +1,21 @@
 import CategoryCard from "./category-card";
 const categoryColor = [
-    'purple-400',
-    'teal-400',
-    'pink-400',
-    'indigo-400'
+    'teal-500',
+    'indigo-500',
+    'purple-500',
+    'pink-500',
+    
 ]
 export default function Categories({ categories }) {
     return (
         <>
 
-            <section class=" body-font hidden md:block">
-                <div class="container mx-auto py-12">
+            <section className=" body-font hidden md:block">
+                <div className="container mx-auto py-12">
 
-                    <div class="flex flex-wrap justify-center text-center">
+                    <div className="flex flex-wrap justify-center text-center">
                         {categories.map((category, index) => (
-                            <CategoryCard category={category} color={categoryColor[index]}/>
+                            <CategoryCard key={index} category={category} color={categoryColor[index]}/>
                         ))
                         }
                     </div>
