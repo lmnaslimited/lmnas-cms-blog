@@ -41,7 +41,7 @@ const Category = ({ category, preview, categories, authors }) => {
         <Layout preview={preview} categories={categories} >
 
           <Head>
-            <title>Next.js Blog Example with {CMS_NAME}</title>
+            <title>LMNAs Blog | Category {category.name}</title>
           </Head>
 
           <Intro title={category.name} />
