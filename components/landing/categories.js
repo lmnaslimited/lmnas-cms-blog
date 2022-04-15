@@ -1,9 +1,9 @@
 import CategoryCard from "./category-card";
 const categoryColor = [
     'indigo-500',
-    'indigo-500',
-    'indigo-500',
-    'indigo-500',
+    'teal-500',
+    'purple-500',
+    'sky-500',
    
     
 ]
