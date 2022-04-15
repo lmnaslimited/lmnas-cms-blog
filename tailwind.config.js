@@ -10,8 +10,10 @@ module.exports = {
       colors: {
         emerald: colors.emerald,
         fuchsia: colors.fuchsia,
+        red: colors.red,
         pink: colors.pink,
         teal: colors.teal,
+        green: colors.green,
         violet: colors.violet,
         purple: colors.purple,
         indigo: colors.indigo,

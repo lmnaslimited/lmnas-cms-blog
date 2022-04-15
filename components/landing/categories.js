@@ -1,9 +1,10 @@
 import CategoryCard from "./category-card";
 const categoryColor = [
-    'green-500',
+    'red-500',
     'indigo-500',
-    'purple-500',
     'pink-500',
+    'purple-500',
+   
     
 ]
 export default function Categories({ categories }) {
