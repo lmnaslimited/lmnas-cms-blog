@@ -1,6 +1,6 @@
 import CategoryCard from "./category-card";
 const categoryColor = [
-    'teal-500',
+    'green-500',
     'indigo-500',
     'purple-500',
     'pink-500',

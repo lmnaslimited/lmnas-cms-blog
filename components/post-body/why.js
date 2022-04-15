@@ -6,9 +6,9 @@ export default function Why({ why }) {
             <section className="text-th-primary-medium body-font">
 
                 <div className="container flex flex-wrap px-5 py-8 mx-auto bg-th-background-secondary">
-                    <div class="container px-5 py-4 mx-auto bg-th-background">
-                        <div class="flex flex-wrap w-full flex-col items-center text-center">
-                            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">{why.sectionTitle.title}</h1>
+                    <div className="container px-5 py-4 mx-auto bg-th-background">
+                        <div className="flex flex-wrap w-full flex-col items-center text-center">
+                            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">{why.sectionTitle.title}</h1>
 
                         </div>
                     </div>

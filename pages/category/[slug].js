@@ -6,7 +6,9 @@ import Layout from '@/components/layout'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 import { strapiAPI } from '@/lib/api'
-import FooterBanner from 'pages/posts/footer-banner'
+import FooterBanner from '../../components/footer-banner'
+
+
 
 
 //import Seo from "../../components/seo"

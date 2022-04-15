@@ -13,7 +13,7 @@ import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 import markdownToHtml from '@/lib/markdownToHtml'
 import { strapiAPI } from '@/lib/api'
-import FooterBanner from './footer-banner'
+import FooterBanner from '../../components/footer-banner'
 
 export default function Post({ post, morePosts, preview, categories }) {
   const router = useRouter()
