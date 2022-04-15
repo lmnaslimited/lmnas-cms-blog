@@ -12,7 +12,8 @@ export default function Logo() {
           <Link href={process.env.BACKEND_URL + "/"}>
                 <a aria-label={'LMNAs Cloud Solutions'}><Image src="https://lmnas.com/wp-content/uploads/2021/04/lmnas2.png"
                     height={'30 px'}
-                    width={'80 px'} />
+                    width={'80 px'} 
+                    alt='LMNAs Logo'/>
                 </a>
             </Link>
 

@@ -7,7 +7,7 @@ const colorClass = color? ('bg-' + color) : 'bg-th-accent-light'
 
     <div className="py-4 md:p-4 md:w-1/4 mx-4 sm:w-1/2 w-full">
 
-      <Link href={process.env.BACKEND_URL + `/category/${category.slug}`}>
+      <Link href={process.env.BACKEND_URL + `/category/${category.slug}`} passHref>
         <button type="button" className="bg-th-primary-light shadow-sm text-th-background inline-flex  pt-3 pb-2 px-5 rounded-lg items-center hover:bg-th-accent-medium hover:text-gray-100 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out">
         <div className={"shadow-sm text-th-background  py-6 -mt-4 -mb-3 px-1.5 -ml-5  items-center hover:bg-th-accent-medium hover:text-th-primary-light focus:outline-none " + colorClass}>
           </div>
