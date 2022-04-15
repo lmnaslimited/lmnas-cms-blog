@@ -6,13 +6,13 @@ export default function Footer() {
     <footer className="bg-th-backgorund border-t border-th-accent-light">
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <div className='text-xl col-span-2 lg:col-span-1 my-2 text-th-primary-light' >
+        <div className='text-xl col-span-2 lg:col-span-1 my-2 text-th-primary-medium' >
           <div className='my-2'>About</div>
           <div className='my-2'>_____</div>
           LMNAs, the most adaptable business solution for growing small and midmarket organizations. We create solutions with our uniquely deep knowledge of the industries we serve.
         </div>
         <div className='text-xl text-th-accent-medium col-span-1 my-2'>
-          <div className='text-th-primary-light'>
+          <div className='text-th-primary-medium'>
             <div className='my-2'>Menu</div>
             <div className='my-2'>_____</div>
           </div>
@@ -37,7 +37,7 @@ export default function Footer() {
           </nav>
         </div>
         <div className='text-xl my-2'>
-          <div className='text-th-primary-light'>
+          <div className='text-th-primary-medium'>
             <div className='my-2'>Contact</div>
             <div className='my-2'>_____</div>
           </div>
