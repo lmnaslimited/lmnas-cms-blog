@@ -5,13 +5,13 @@ export default function CategoryCard({ category, color }) {
   const colorClass = color ? ('bg-' + color) : 'bg-th-accent-light'
   return (
 
-    <div className="py-4 md:p-4 md:w-1/4 mx-4 sm:w-1/2 w-full">
+    <div className="py-4 md:p-4 md:w-1/4 mx-4 sm:w-1/2 w-full transform transition hover:scale-105 duration-300 ease-in-out">
 
       <Link href={process.env.BACKEND_URL + `/category/${category.slug}`} passHref>
         <div className="flex">
           <div className={"w-2.5  bg-purple-500"}/>
       
-          <button type="button" className="bg-th-primary-light shadow-sm text-th-background inline-flex  pt-3 pb-2 px-5 rounded-r-lg items-center hover:bg-th-accent-medium hover:text-gray-100 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out">
+          <button type="button" className="bg-th-primary-light shadow-sm text-th-background inline-flex  pt-3 pb-2 px-5 rounded-r-lg items-center hover:bg-th-accent-medium hover:text-gray-100 focus:outline-none ">
 
             <DynamicHeroIcon icon={category.svg} />
 

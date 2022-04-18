@@ -12,7 +12,7 @@ export default function DownloadCard({ size, imageSrc, post }) {
 
                 <div className="relative">
                 <CoverImage url={imageSrc} title={'Download lmnas resource'} height={1500 / parseInt(size)} />
-                    <button className="absolute top-0 bg-purple-500 text-th-primary-light p-4 rounded hover:bg-th-accent-medium xl:text-lg xl:font-semibold ml-20 mt-12 md:ml-24 md:mt-20 lg:m-12 xl:my-20 xl:ml-28  transform transition hover:scale-105 duration-300 ease-in-out">Download Now</button>
+                    <button className="absolute top-0 bg-purple-500 text-th-primary-light p-4 rounded hover:bg-th-accent-medium xl:text-lg font-semibold ml-20 mt-12 md:ml-24 md:mt-20 lg:m-12 xl:my-20 xl:ml-28  transform transition hover:scale-105 duration-300 ease-in-out">Download Now</button>
                 </div>
             </div>
     )
