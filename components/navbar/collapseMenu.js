@@ -1,13 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 export default function CollapseMenu({ subMenus }) {
   const hiddenClass = ' hidden'
   const [collapse, setCollapse] = useState(true);
+  // create a React ref for the dropdown element
+  const dropdown = useRef(null);
+  useEffect(() => {
+    // only add the event listener when the dropdown is opened
+    if (collapse) return;
+    function handleClick(event) {
+      if (dropdown.current && !dropdown.current.contains(event.target)) {
+        setCollapse(true);
+      }
+    }
+    window.addEventListener("click", handleClick);
+    // clean up
+    return () => window.removeEventListener("click", handleClick);
+  }, [collapse]);
+
   return (
     <button
       onClick={() => {
         setCollapse(!collapse);
       }}>
-      <div className="block  lg:inline-block text-th-primary-medium hover:text-th-accent-medium">
+      <div  ref={dropdown} className="block  lg:inline-block text-th-primary-medium hover:text-th-accent-medium">
         <svg
           className="fill-current h-4 w-4 ml-4 text-th-primary-dark  dark:hover:text-pink-500  hover:text-pink-500"
           xmlns="http://www.w3.org/2000/svg"

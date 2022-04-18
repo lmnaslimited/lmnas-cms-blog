@@ -8,7 +8,7 @@ export default function Why({ why }) {
                 <div className="container flex flex-wrap px-5 py-8 mx-auto bg-th-background-secondary">
                     <div className="container px-5 py-4 mx-auto bg-th-background">
                         <div className="flex flex-wrap w-full flex-col items-center text-center">
-                            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">{why.sectionTitle.title}</h1>
+                            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-th-primary-medium">{why.sectionTitle.title}</h1>
 
                         </div>
                     </div>
