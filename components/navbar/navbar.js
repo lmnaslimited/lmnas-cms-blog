@@ -25,13 +25,13 @@ const Navbar = ({ categories }) => {
       <ToggleMobileMenu />
       <div className={"w-full block flex-grow lg:flex  lg:items-center lg:w-auto " + (appContext.displayMobileMenu ? " hidden" : null)}>
         <MenuList menuItems={menuItems} />
-        {/**To be replaced with Typesense Search */}
-        <Search />
+        {/**To be replaced with Typesense Search 
+        <Search />*/}
         <div className="flex items-center justify-between flex-row-reverse lg:flex-row">
           <div className="mt-4 lg:mt-0">
             <SunMoon />
           </div>
-          <Login />
+         {/**  <Login />*/}
         </div>
       </div>
     </nav>
