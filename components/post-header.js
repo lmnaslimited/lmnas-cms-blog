@@ -2,8 +2,10 @@ import Avatar from '../components/avatar'
 import Date from '../components/date'
 import CoverImage from '../components/cover-image'
 import PostTitle from '../components/post-title'
+import Link from 'next/link'
 
 export default function PostHeader({ title, coverImage, date, author, heroCta }) {
+  console.log(heroCta.target)
   return (
     <>
       <section className="body-font">
@@ -16,8 +18,9 @@ export default function PostHeader({ title, coverImage, date, author, heroCta })
 
             {heroCta ? <p className="text-sm mt-4 text-th-primary-light mb-4 w-3/5">{heroCta.title.subTitle}</p> : null}
             <div className="flex w-full md:justify-start justify-center items-end">
-
-              <button className="inline-flex text-white bg-th-accent-light border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">{heroCta.title.title}</button>
+              <Link href={  heroCta.target.startsWith('/') ? (process.env.BACKEND_URL + heroCta.target): heroCta.target}>
+                <button className="inline-flex text-white bg-th-accent-light border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">{heroCta.title.title}</button>
+              </Link>
             </div>
 
 

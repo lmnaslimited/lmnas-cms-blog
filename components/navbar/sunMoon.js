@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 export default function SunMoon() {
-    //Determine how many points the slider need to move
-    const toggleClass = ' transform translate-x-3';
+    const [mounted, setMounted] = useState(false);
     const [toggle, setToggle] = useState(false);
     // Refer Blog https://darrenwhite.dev/blog/nextjs-tailwindcss-theming
     // Themes are configured in /styles/index.css
     const { theme, setTheme } = useTheme();
+
+    // When mounted on client, now we can show the UI
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) return null;
+
     return (
         <div
             className="w-10 h-6 flex items-center  rounded-full p-1 cursor-pointer"
