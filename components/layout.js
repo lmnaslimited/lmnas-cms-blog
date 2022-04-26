@@ -9,7 +9,7 @@ export default function Layout({ preview, children, categories }) {
   return (
     <>
       <div className="bg-th-background">
-          <Script strategy="afterInteractive">
+          <Script id='cx-lmnas' strategy="afterInteractive">
               {`
               (function(w,d,t,u,n,a,m){w['MauticTrackingObject'] = n;
               w[n]=w[n]||function(){(w[n].q = w[n].q || []).push(arguments)},a=d.createElement(t),
