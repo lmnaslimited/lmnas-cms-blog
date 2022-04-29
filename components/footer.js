@@ -4,9 +4,9 @@ import { EXAMPLE_PATH } from '@/lib/constants'
 export default function Footer() {
   return (
     <footer className="bg-th-backgorund border-t border-th-accent-light">
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
 
-        <div className='text-xl col-span-2 lg:col-span-1 my-2 text-th-primary-medium' >
+        <div className='text-xl col-span-2 lg:col-span-2 my-2 text-th-primary-medium' >
           <div className='my-2'>About</div>
           <div className='my-2'>_____</div>
           LMNAs, the most adaptable business solution for growing small and midmarket organizations. We create solutions with our uniquely deep knowledge of the industries we serve.

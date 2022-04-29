@@ -7,8 +7,8 @@ export default function DownloadCard({ size, imageSrc, post }) {
     return (
             <div className="my-8 md:my-0 h-full border-2 border-th-primary-medium border-opacity-60 rounded-lg overflow-hidden bg-th-accent-medium">
 
-                <h1 className="text-5xl p-5 font-medium text-center text-gray-100 title-font mb-2 ">Download Case Studies form Our Resource centre
-                </h1>
+                <a href="#"><h1 className="text-5xl p-5 font-medium text-center hover:underline text-gray-100 title-font mb-2 ">Download Case Studies form Our Resource centre
+                </h1></a>
 
                 <div className="relative">
                 <CoverImage url={imageSrc} title={'Download lmnas resource'} height={1500 / parseInt(size)} />
