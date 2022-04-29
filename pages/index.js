@@ -17,7 +17,7 @@ export default function Index({ allPosts, preview, categories }) {
         <Container>
           <Layout preview={preview} categories={categories} >
             <Head>
-              <title>LMNAs Blog with {CMS_NAME}</title>
+              <title>LMNAs Blog | Business & Technology</title>
             </Head>
            
             <Landing allPosts={allPosts} preview={preview} categories={categories}/>

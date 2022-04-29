@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { CMS_NAME, HOME_OG_IMAGE_URL } from '@/lib/constants'
 
-export default function Meta() {
+export default function Meta({ metaTags }) {
   return (
     <Head>
       <link
@@ -32,10 +32,30 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta
-        name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
-      />
+      {
+        metaTags ? metaTags.map((metaTag) => {
+          return (
+            <meta key={metaTag.name}
+
+              name={metaTag.name}
+              content={metaTag.content}
+            />
+          )
+        })
+          :
+          <>
+            <meta
+
+              name="description"
+              content="LMNAs Blog for your digital and industry 4.0 transformation, which has business insights covering, ERP, e-commerce and digital marketing."
+            />
+            <meta
+
+              name="author"
+              content="LMNAs"
+            />
+          </>
+      }
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>
   )

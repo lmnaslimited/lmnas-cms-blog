@@ -23,7 +23,7 @@ export default function Post({ post, morePosts, preview, categories }) {
   return (
     <>
       <Container>
-        <Layout preview={preview} categories={categories}>
+        <Layout preview={preview} categories={categories} metaTags={post.meta}>
 
           <Header />
           {router.isFallback ? (

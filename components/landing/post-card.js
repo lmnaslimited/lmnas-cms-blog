@@ -24,6 +24,7 @@ export default function PostCard({ size, imageSrc, post }) {
                         </Link>
                     </h1>
                     <p className="w-full text-th-primary-dark leading-relaxed mb-3">{excerptDisplay}</p>
+                  
                     <div className="flex items-center flex-wrap">
                         <a href={process.env.BACKEND_URL + `/posts/${post.slug}`} className="text-th-accent-medium inline-flex items-center md:mb-2 lg:mb-0">Learn More
                             <svg viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 ml-2">
@@ -32,6 +33,7 @@ export default function PostCard({ size, imageSrc, post }) {
                                 <path d="M12 5l7 7-7 7">
                                 </path>
                             </svg></a>
+                        {/* Commenting the comments and number of views block. Uncomment when needed    
                         <span className="text-th-primary-dark mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200"><svg stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" className="w-4 h-4 mr-1">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z">
                             </path>
@@ -44,8 +46,12 @@ export default function PostCard({ size, imageSrc, post }) {
                             </path>
                         </svg>6
                         </span>
+                         */}
+  
                     </div>
+                   
                 </div>
+
             </div>
         </>
 

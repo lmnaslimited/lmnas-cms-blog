@@ -5,7 +5,7 @@ import Navbar from './navbar/navbar'
 import Script from 'next/script'
 
 
-export default function Layout({ preview, children, categories }) {
+export default function Layout({ preview, children, categories, metaTags }) {
   return (
     <>
       <div className="bg-th-background">
@@ -20,7 +20,7 @@ export default function Layout({ preview, children, categories }) {
             `}
           </Script>
         <Navbar categories={categories} />
-        <Meta />
+        <Meta metaTags={metaTags}/>
 
         <div className="min-h-screen">
           {preview &&
