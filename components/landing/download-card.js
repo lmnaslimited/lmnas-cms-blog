@@ -13,7 +13,7 @@ export default function DownloadCard({ size, imageSrc, post }) {
             <div className="">
                 
                 <div className='mx-4'>
-                    <button className=" top-0 bg-purple-500 text-th-primary-light p-4 rounded hover:bg-th-accent-medium xl:text-lg font-semibold my-8 transform transition hover:scale-105 duration-300 ease-in-out w-full">Download Now</button>
+                    <button className=" top-0 bg-purple-500 text-th-primary-light p-4 rounded hover:bg-th-background xl:text-lg font-semibold my-8 transform transition hover:scale-105 duration-300 ease-in-out w-full">Download Now</button>
                 </div>
             </div>
         </div>
