@@ -8,7 +8,7 @@ export default function MenuList({ menuItems }) {
       {
         //A Sub function to build individual menu
         menuItems.map((menuItem) => (
-          <Menu key={menuItem} menuItem={menuItem} />)
+          <Menu key={menuItem.menu} menuItem={menuItem} />)
 
         )}
     </div>
