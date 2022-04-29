@@ -25,6 +25,7 @@ export default function Logo() {
             <Link href={process.env.BACKEND_URL + "/"}>
                 <a aria-label={'LMNAs Cloud Solutions'}>
                     <span className="font-semibold text-xl tracking-tight">LMNAs</span>
+                    <span className="text-xl tracking-normal text-yellow-500 text-opacity-90"> insights</span>
                 </a>
             </Link>
 
