@@ -58,12 +58,41 @@ export default function Post({ post, morePosts, preview, categories }) {
   )
 }
 
+// export async function getStaticProps({ params, preview = null }) {
+//   //Get the Post content and the More posts
+//   const data = await getPostAndMorePosts(params.slug, preview)
+//   //Make content only if it filled
+//   const content = data?.posts[0]?.content || ''
+//   //Get the HTML of dynamic contents of the post.
+//   const content_html = await Promise.all(content.map(async (fragment) => {
+//     switch (fragment.__typename) {
+//       case 'ComponentBodySection':
+//         fragment.html_content = await markdownToHtml(fragment.content)
+//         return fragment
+//       case 'ComponentCtaButton':
+//         fragment.html_content = await markdownToHtml(fragment.content)
+//         return fragment
+//     }
+//   }))
+//   //const content = await markdownToHtml(data?.posts[0]?.content || '')
+
+//   const categories = await strapiAPI("/api/categories")
+//   return {
+//     props: {
+//       preview,
+//       post: {
+//         ...data?.posts[0],
+//         content,
+//       },
+//       morePosts: data?.morePosts,
+//       categories
+//     },
+//   }
+// }
+
 export async function getStaticProps({ params, preview = null }) {
-  //Get the Post content and the More posts
   const data = await getPostAndMorePosts(params.slug, preview)
-  //Make content only if it filled
   const content = data?.posts[0]?.content || ''
-  //Get the HTML of dynamic contents of the post.
   const content_html = await Promise.all(content.map(async (fragment) => {
     switch (fragment.__typename) {
       case 'ComponentBodySection':
@@ -74,21 +103,26 @@ export async function getStaticProps({ params, preview = null }) {
         return fragment
     }
   }))
-  //const content = await markdownToHtml(data?.posts[0]?.content || '')
 
-  const categories = await strapiAPI("/categories")
+  const categories = await strapiAPI("/api/categories")
+
+  // Ensure excerpt is defined
+  const post = {
+    ...data?.posts[0],
+    content,
+    excerpt: data?.posts[0]?.excerpt || '', // Default to empty string if undefined
+  }
+
   return {
     props: {
       preview,
-      post: {
-        ...data?.posts[0],
-        content,
-      },
+      post,
       morePosts: data?.morePosts,
-      categories
+      categories,
     },
   }
 }
+
 
 export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug()

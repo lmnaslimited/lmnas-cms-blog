@@ -42,6 +42,7 @@ const Navbar = ({ categories }) => {
 export default Navbar
 
 function BuildMenu({ categories }) {
+  
   const cat = categories.map((category) => { return {name: category.name, slug: category.slug}  })
   return [
     {

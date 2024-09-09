@@ -33,7 +33,7 @@ export default function Index({ allPosts, preview, categories }) {
 
 export async function getStaticProps({ preview = null }) {
   const allPosts = (await getAllPostsForHome(preview)) || []
-  const categories = await strapiAPI("/categories")
+  const categories = await strapiAPI("/api/categories")
   return {
     props: { allPosts, preview, categories },
   }

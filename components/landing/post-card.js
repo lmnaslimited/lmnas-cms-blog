@@ -19,10 +19,11 @@ export default function PostCard({ size, imageSrc, post }) {
                 <div className="p-6">
                     <h2 className="tracking-widest text-xs title-font font-medium  text-th-accent-medium  mb-1">{(post.category.name ? post.category.name.toUpperCase() : 'UnclassNameified')}</h2>
                     <h1 className="title-font text-lg font-medium mb-3 text-th-primary-medium">
-                        <Link href={process.env.BACKEND_URL + `/posts/${post.slug}`}>
-                            <a className="hover:underline">{post.title}</a>
-                        </Link>
+                    <Link href={process.env.BACKEND_URL + `/posts/${post.slug}`} className="hover:underline">
+                        {post.title}
+                    </Link>
                     </h1>
+
                     <p className="w-full text-th-primary-dark leading-relaxed mb-3">{excerptDisplay}</p>
                   
                     <div className="flex items-center flex-wrap">

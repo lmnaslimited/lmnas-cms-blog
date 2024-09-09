@@ -7,43 +7,31 @@ import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 import { strapiAPI } from '@/lib/api'
 import FooterBanner from '../../components/footer-banner'
+import { getCategorybySlug,getPostBySlug } from '@/lib/api' // Update imports
 
 
-
-
-//import Seo from "../../components/seo"
-
-
-const Category = ({ category, preview, categories, authors }) => {
-  //Implement this later
-  /* const seo = {
-     metaTitle: category.name,
-     metaDescription: `All ${category.name} articles`,
-      <Seo seo={seo} />
-   } */
-  const heroPost = category.posts[0]
+const Category = ({ category, preview, categories, authors, posts }) => {
+  const heroPost = posts[0]
   const morePosts = category.posts.slice(1).map((post) => (
-
     {
       slug: post.slug,
       title: post.title,
       coverImage: post.coverImage,
       date: post.date,
-      author: authors.find(c => c.name = post.author),
+      author: authors.find(c => c.name === post.author),
       excerpt: post.excerpt
     }
   ))
-  const author = { name: heroPost.author, picture: authors[0].picture }
+
+  
+  const author = { name: heroPost.author.name, picture: heroPost.author.picture }
   return (
     <>
       <Container>
-
-        <Layout preview={preview} categories={categories} >
-
+        <Layout preview={preview} categories={categories}>
           <Head>
             <title>LMNAs Blog | Category {category.name}</title>
           </Head>
-
           <Intro title={category.name} />
           {heroPost && (
             <HeroPost
@@ -56,7 +44,6 @@ const Category = ({ category, preview, categories, authors }) => {
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-
         </Layout>
       </Container>
       <FooterBanner />
@@ -65,8 +52,7 @@ const Category = ({ category, preview, categories, authors }) => {
 }
 
 export async function getStaticPaths() {
-  const categories = await strapiAPI("/categories")
-
+  const categories = await strapiAPI("/api/categories")
 
   return {
     paths: categories.map((category) => ({
@@ -79,12 +65,16 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const category = (await strapiAPI(`/categories?slug=${params.slug}`))[0]
-  const categories = await strapiAPI("/categories")
-  const authors = await strapiAPI("/authors")
+ 
+  
+  // Fetch data using appropriate API calls
+  const category = (await getCategorybySlug(params.slug))[0] // Assuming this fetches category by slug
+  const categories = await getCategorybySlug() // Assuming this fetches all categories
+  const authors = await getCategorybySlug() // Assuming this fetches all authors
+  const posts = await getPostBySlug(category.posts[0].slug)
 
   return {
-    props: { category, categories, authors },
+    props: { category, categories, authors,posts },
     revalidate: 1,
   }
 }

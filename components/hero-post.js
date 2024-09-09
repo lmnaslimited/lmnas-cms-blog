@@ -18,11 +18,12 @@ export default function HeroPost({
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-10 mb-20 md:mb-28">
         <div>
-          <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
-            <Link href={process.env.BACKEND_URL+`/posts/${slug}`}>
-              <a className="hover:underline">{title}</a>
-            </Link>
-          </h3>
+        <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
+          <Link href={`${process.env.BACKEND_URL}/posts/${slug}`} className="hover:underline">
+            {title}
+         </Link>
+        </h3>
+
           <div className="mb-4 md:mb-0 text-lg text-th-accent-medium">
             <Date dateString={date} />
           </div>

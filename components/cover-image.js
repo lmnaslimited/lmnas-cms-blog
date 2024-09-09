@@ -20,14 +20,14 @@ export default function CoverImage({ title, url, slug, height, width }) {
     />
   )
   return (
-    <div className="sm:mx-0">
-      {slug ? (
-        <Link href={process.env.BACKEND_URL+`/posts/${slug}`}>
-          <a aria-label={title}>{image}</a>
-        </Link>
-      ) : (
-        image
-      )}
-    </div>
+<div className="sm:mx-0">
+  {slug ? (
+    <Link href={`${process.env.BACKEND_URL}/posts/${slug}`} aria-label={title}>
+      {image}
+    </Link>
+  ) : (
+    image
+  )}
+</div>
   )
 }
