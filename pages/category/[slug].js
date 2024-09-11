@@ -23,7 +23,7 @@ const Category = ({ category, preview, categories, authors, posts }) => {
     }
   ))
 
-  
+
   const author = { name: heroPost.author.name, picture: heroPost.author.picture }
   return (
     <>
@@ -68,9 +68,9 @@ export async function getStaticProps({ params }) {
  
   
   // Fetch data using appropriate API calls
-  const category = (await getCategorybySlug(params.slug))[0] // Assuming this fetches category by slug
-  const categories = await getCategorybySlug() // Assuming this fetches all categories
-  const authors = await getCategorybySlug() // Assuming this fetches all authors
+  const category = (await getCategorybySlug(params.slug))[0] 
+  const categories = await strapiAPI("/api/categories")
+  const authors = await getCategorybySlug() 
   const posts = await getPostBySlug(category.posts[0].slug)
 
   return {
