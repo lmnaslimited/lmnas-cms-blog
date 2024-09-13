@@ -17,7 +17,7 @@ import FooterBanner from '../../components/footer-banner'
 
 export default function Post({ post, morePosts, preview, categories }) {
   const router = useRouter()
-  console.log(post)
+  // console.log(post)
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }

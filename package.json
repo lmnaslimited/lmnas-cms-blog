@@ -6,6 +6,7 @@
     "start": "next start -p 4000",
     "export": "next export",
     "lint": "next lint",
+    "postbuild": "next-sitemap",
     "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
@@ -19,7 +20,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "remark": "^14.0.1",
-    "remark-html": "^15.0.0"
+    "remark-html": "^15.0.0",
+    "next-sitemap": "^4.0.7"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.6.2",

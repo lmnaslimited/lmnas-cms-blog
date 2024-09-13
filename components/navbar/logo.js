@@ -30,7 +30,7 @@ export default function Logo() {
         </Link>
         <Link href={process.env.BACKEND_URL + "/"} className="flex items-center">
           <span className="font-semibold text-xl tracking-tight">LMNAs</span>
-          <span className="text-xl tracking-normal text-yellow-500 text-opacity-90"> insights</span>
+          <span className="text-xl tracking-normal text-yellow-500 text-opacity-90 px-1"> Blog</span>
         </Link>
       
         {/**   <Link href={process.env.BACKEND_URL + "/"} className="flex items-center">

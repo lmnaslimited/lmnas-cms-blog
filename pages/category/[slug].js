@@ -10,7 +10,7 @@ import FooterBanner from '../../components/footer-banner'
 import { getCategorybySlug,getPostBySlug } from '@/lib/api' // Update imports
 
 
-const Category = ({ category, preview, categories, authors, posts }) => {
+const Category = ({ category, preview, categories,  posts }) => {
   const heroPost = posts[0]
   const morePosts = category.posts.slice(1).map((post) => (
     {
@@ -18,7 +18,7 @@ const Category = ({ category, preview, categories, authors, posts }) => {
       title: post.title,
       coverImage: post.coverImage,
       date: post.date,
-      author: authors.find(c => c.name === post.author),
+      author: post.author,
       excerpt: post.excerpt
     }
   ))
@@ -70,11 +70,12 @@ export async function getStaticProps({ params }) {
   // Fetch data using appropriate API calls
   const category = (await getCategorybySlug(params.slug))[0] 
   const categories = await strapiAPI("/api/categories")
-  const authors = await getCategorybySlug() 
+  // const authors = await getCategorybySlug() 
   const posts = await getPostBySlug(category.posts[0].slug)
 
+
   return {
-    props: { category, categories, authors,posts },
+    props: { category, categories,posts },
     revalidate: 1,
   }
 }

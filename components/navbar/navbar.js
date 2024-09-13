@@ -45,22 +45,22 @@ function BuildMenu({ categories }) {
   
   const cat = categories.map((category) => { return {name: category.name, slug: category.slug}  })
   return [
+    // {
+    //   menu: 'Industries',
+    //   target: 'https://lmnas.com/#industries'
+    // },
+    // {
+    //   menu: 'Pricing',
+    //   target: 'https://lmnas.com/#pricing'
+    // },
     {
-      menu: 'Industries',
-      target: 'https://lmnas.com/#industries'
-    },
-    {
-      menu: 'Pricing',
-      target: 'https://lmnas.com/#pricing'
-    },
-    {
-      menu: 'Blog',
+      menu: 'Category',
       subMenus: [...cat]
     },
-    {
-      menu: 'Contact',
-      target: 'https://lmnas.com/contact'
-    },
+    // {
+    //   menu: 'Contact',
+    //   target: 'https://lmnas.com/contact'
+    // },
     {
       menu: 'Subscriptions',
       target: 'https://nectar.lmnas.com/all-products'

@@ -17,12 +17,12 @@ export default function MenuList({ menuItems }) {
 //Sub function to build the individual menu
 function Menu({ menuItem }) {
   return (
-    <div className="block ml-2 mt-4 lg:inline-block lg:mt-0 text-th-primary-medium hover:text-th-accent-medium mr-4">
-    <a href={menuItem.target ? menuItem.target : null}>
-      {menuItem.menu}
-    </a>
-    {menuItem.subMenus ? <CollapseMenu subMenus={menuItem.subMenus} /> : null}
-  </div>
+   <div className="block ml-2 mt-4 lg:inline-block lg:mt-0 text-th-primary-medium hover:text-th-accent-medium mr-4">
+      <a href={menuItem.target ? menuItem.target : null}>
+        {menuItem.menu}
+      </a>
+      {menuItem.subMenus ? <CollapseMenu subMenus={menuItem.subMenus} /> : null}
+    </div>
 
 
   )

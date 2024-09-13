@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://lmnas.com/blog
+
+# Sitemaps
+Sitemap: https://lmnas.com/blog/sitemap.xml
