@@ -10,14 +10,13 @@ export default function PostCard({ size, imageSrc, post }) {
         }${post.coverImage.url}`
     const excerptDisplay = post.excerpt.length < 150 * parseInt(size) ? post.excerpt : (post.excerpt.substring(0, 150 * parseInt(size)) + '...')
     //const categoryUpper = category.toUpperCase()
-
     return (
         <>
             {/* <div className={"py-4 md:p-4 " + cardSizeclass}> */}
             <div className="my-8 md:my-0 h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <CoverImage slug={post.slug} title={post.title} url={post.coverImage.url} width={720 * parseInt(size)} height={400} />
                 <div className="p-6">
-                    <h2 className="tracking-widest text-xs title-font font-medium  text-th-accent-medium  mb-1">{(post.category.name ? post.category.name.toUpperCase() : 'UnclassNameified')}</h2>
+                    <h2 className="tracking-widest text-xs title-font font-medium  text-th-primary  mb-1">{(post.category ? post.category.toUpperCase() : 'UnclassNameified')}</h2>
                     <h1 className="title-font text-lg font-medium mb-3 text-th-primary-medium">
                     <Link href={process.env.BACKEND_URL + `/posts/${post.slug}`} className="hover:underline">
                         {post.title}
@@ -27,7 +26,7 @@ export default function PostCard({ size, imageSrc, post }) {
                     <p className="w-full text-th-primary-dark leading-relaxed mb-3">{excerptDisplay}</p>
                   
                     <div className="flex items-center flex-wrap">
-                        <a href={process.env.BACKEND_URL + `/posts/${post.slug}`} className="text-th-accent-medium inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                        <a href={process.env.BACKEND_URL + `/posts/${post.slug}`} className="text-th-primary inline-flex items-center hover:scale-105 md:mb-2 lg:mb-0">Learn More
                             <svg viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 ml-2">
                                 <path d="M5 12h14">
                                 </path>

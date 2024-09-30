@@ -3,7 +3,7 @@ import markdownStyles from '../../components/markdown-styles.module.css'
 export default function Why({ why }) {
     return (
         <>
-            <section className="text-th-primary-medium body-font">
+            <section className="text-th-medium body-font">
 
                 <div className="container flex flex-wrap px-5 py-8 mx-auto bg-th-background-secondary">
                     <div className="container px-5 py-4 mx-auto bg-th-background">

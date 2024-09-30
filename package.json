@@ -10,18 +10,33 @@
     "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
+    "@fontsource/montserrat": "^5.1.0",
+    "@fontsource/roboto": "^5.1.0",
+    "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^1.0.6",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.34",
+    "@types/react-dom": "18.0.11",
+    "autoprefixer": "10.4.14",
+    "axios": "^1.6.7",
     "classnames": "2.3.1",
     "cloudinary-build-url": "^0.2.1",
     "date-fns": "2.22.1",
+    "eslint": "8.38.0",
+    "eslint-config-next": "13.3.0",
     "heroicons": "2.1.5",
+    "jest-worker": "^29.7.0",
     "next": "^14.2.8",
+    "next-sitemap": "^4.0.7",
     "next-themes": "0.0.15",
+    "postcss": "8.4.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "remark": "^14.0.1",
     "remark-html": "^15.0.0",
-    "next-sitemap": "^4.0.7"
+    "sharp": "^0.32.0",
+    "tailwindcss": "3.3.1",
+    "typescript": "5.0.4"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.6.2",
@@ -32,7 +47,7 @@
     "eslint": "<8.0.0",
     "eslint-config-next": "^14.2.8",
     "postcss": "^8.4.1",
-    "tailwindcss": "^2.2.19",
+    "tailwindcss": "3.3.1",
     "typescript": "^4.6.3"
   }
 }

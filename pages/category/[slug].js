@@ -8,9 +8,11 @@ import { CMS_NAME } from '@/lib/constants'
 import { strapiAPI } from '@/lib/api'
 import FooterBanner from '../../components/footer-banner'
 import { getCategorybySlug,getPostBySlug } from '@/lib/api' // Update imports
+import { getHomePageData } from "../api/homePageData"
 
 
-const Category = ({ category, preview, categories,  posts }) => {
+
+const Category = ({ category, homePageData,  posts }) => {
   const heroPost = posts[0]
   const morePosts = category.posts.slice(1).map((post) => (
     {
@@ -27,8 +29,13 @@ const Category = ({ category, preview, categories,  posts }) => {
   const author = { name: heroPost.author.name, picture: heroPost.author.picture }
   return (
     <>
+
+<main className="bg-th-backgroundPrimary">
+      <div className="absolute inset-0 bg-[url(/blog/product-heroBG.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+      <div className="relative">
+        
+      <Layout ilayoutData={homePageData[0].layoutData}>
       <Container>
-        <Layout preview={preview} categories={categories}>
           <Head>
             <title>LMNAs Blog | Category {category.name}</title>
           </Head>
@@ -44,8 +51,10 @@ const Category = ({ category, preview, categories,  posts }) => {
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Layout>
       </Container>
+      </Layout>
+    </div>
+    </main>
       <FooterBanner />
     </>
   )
@@ -72,11 +81,11 @@ export async function getStaticProps({ params }) {
   const categories = await strapiAPI("/api/categories")
   // const authors = await getCategorybySlug() 
   const posts = await getPostBySlug(category.posts[0].slug)
-
+  const homePageData = await getHomePageData("en");
 
   return {
-    props: { category, categories,posts },
-    revalidate: 1,
+    props: { category, categories,posts,homePageData },
+    revalidate: false,
   }
 }
 

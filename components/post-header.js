@@ -18,7 +18,7 @@ export default function PostHeader({ title, coverImage, date, author, heroCta })
             {heroCta ? <p className="text-sm mt-4 text-th-primary-light mb-4 w-3/5">{heroCta.title.subTitle}</p> : null}
             <div className="flex w-full md:justify-start justify-center items-end">
               <Link href={  heroCta.target.startsWith('/') ? (process.env.BACKEND_URL + heroCta.target): heroCta.target}>
-                <button className="inline-flex text-white bg-th-accent-light border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">{heroCta.title.title}</button>
+                <button className="inline-flex text-white bg-th-primary border-0 py-2 px-6 focus:outline-none hover:bg-th-tertiary rounded text-lg">{heroCta.title.title}</button>
               </Link>
             </div>
 
@@ -33,7 +33,7 @@ export default function PostHeader({ title, coverImage, date, author, heroCta })
         <div className="block md:hidden mb-6">
           <Avatar name={author.name} picture={author.picture} />
         </div>
-        <div className="mb-6 text-lg text-th-accent-medium">
+        <div className="mb-6 text-lg text-th-primary">
           <Date dateString={date} />
         </div>
       </div>

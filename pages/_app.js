@@ -1,5 +1,4 @@
-import { ThemeProvider } from 'next-themes';
-import '@/styles/index.css'
+import '@/styles/globals.css'
 import AppContext from "../context/appContext"
 import { useState } from 'react'
 function MyApp({ Component, pageProps }) {
@@ -22,12 +21,12 @@ function MyApp({ Component, pageProps }) {
       }}
     >
       
-      <ThemeProvider>
+    
       <div className='bg-th-background'>
         <Component {...pageProps} />
        
         </div>
-      </ThemeProvider>
+    
    
     </AppContext.Provider>
   )

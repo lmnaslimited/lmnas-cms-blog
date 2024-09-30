@@ -1,5 +1,5 @@
 .markdown {
-  @apply text-lg text-th-primary-medium leading-10;
+  @apply text-lg text-gray-700 leading-10;
 }
 
 .markdown p,

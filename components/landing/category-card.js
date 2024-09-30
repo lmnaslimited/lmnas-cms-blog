@@ -9,9 +9,9 @@ export default function CategoryCard({ category, color }) {
 
       <Link href={process.env.BACKEND_URL + `/category/${category.slug}`} passHref>
         <div className="flex">
-          <div className={"w-2.5  bg-purple-500"}/>
+          <div className={"w-2.5  bg-th-tertiary"}/>
       
-          <button type="button" className="bg-th-primary-light shadow-sm text-th-background inline-flex  pt-3 pb-2 px-5 rounded-r-lg items-center hover:bg-th-accent-medium hover:text-gray-100 focus:outline-none ">
+          <button type="button" className="bg-th-primary-light border border-th-secondary shadow-sm text-th-background inline-flex  pt-3 pb-2 px-5 rounded-r-lg items-center  hover:text-black hover:border-th-primary focus:outline-none ">
 
             <DynamicHeroIcon icon={category.svg} />
 

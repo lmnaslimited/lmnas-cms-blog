@@ -1,36 +1,18 @@
-import Alert from './alert'
-import Footer from './footer'
-import Meta from './meta'
-import Navbar from './navbar/navbar'
-import Script from 'next/script'
+import Footer from "./sections/footer";
+import Navbar from "./sections/navbar";
+import Meta from "./meta";
+import FloatingCTA from "./floatingCta";
 
-
-export default function Layout({ preview, children, categories, metaTags }) {
+export default function Layout({ children, ilayoutData }) {
   return (
-    <>
-      <div className="bg-th-background">
-          <Script id='cx-lmnas' strategy="afterInteractive">
-              {`
-              (function(w,d,t,u,n,a,m){w['MauticTrackingObject'] = n;
-              w[n]=w[n]||function(){(w[n].q = w[n].q || []).push(arguments)},a=d.createElement(t),
-              m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://cx.lmnas.com/mtc.js','mt');
-
-              mt('send', 'pageview');
-            `}
-          </Script>
-        <Navbar categories={categories} />
-        <Meta metaTags={metaTags}/>
-
-        <div className="min-h-screen">
-          {preview &&
-            <Alert preview={preview} />
-          }
-          <main>{children}</main>
-        </div>
-
-        <Footer />
-      </div>
-    </>
-  )
+    <div className="layout">
+      <Navbar inavbar={ilayoutData.navbar} />
+      <Meta imetaData={ilayoutData.metaData} />
+      <main className="relative">
+        <FloatingCTA icta={ilayoutData.floatingbtn} />
+        {children}
+      </main>
+      <Footer ifooterData={ilayoutData.footerData} />
+    </div>
+  );
 }

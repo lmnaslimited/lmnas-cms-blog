@@ -4,8 +4,10 @@ import HeroPost from "../hero-post";
 import PostCard from "./post-card";
 import SubscribeCard from "./subscribe-card";
 import DownloadCard from "./download-card";
+import CasestudyDownload from "@/components/sections/casestudyDownload";
 
-export default function Index({ allPosts, preview, categories }) {
+
+export default function Index({ allPosts, preview, categories, caseStudyData }) {
     const heroPost = allPosts[0]
     const morePosts = allPosts.slice(1)
 
@@ -37,9 +39,13 @@ export default function Index({ allPosts, preview, categories }) {
 
                             <PostCard post={allPosts[2] ? allPosts[2] : heroPost} size='1/3' />
                             <SubscribeCard post={heroPost} size='1/3' />
-                            <DownloadCard imageSrc={"https://res.cloudinary.com/lmnas/image/upload/v1649901729/download_card_5821x3886_d1e1c9daee.jpg"} size='1/3' />
+                            <PostCard post={allPosts[4] ? allPosts[4] : heroPost} size='1/3' />
                             <div className="col-span-2">
                                 <PostCard post={allPosts[3] ? allPosts[3] : heroPost} size='1/3' />
+                            </div>
+                            <div className="col-span-3">
+                            <CasestudyDownload isolution={caseStudyData} />
+                            {/* <DownloadCard imageSrc={"https://res.cloudinary.com/lmnas/image/upload/v1649901729/download_card_5821x3886_d1e1c9daee.jpg"} size='1/3' /> */}
                             </div>
 
                         </div>

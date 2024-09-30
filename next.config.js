@@ -28,6 +28,6 @@ module.exports = {
   images: {
     domains: ["localhost", "res.cloudinary.com", "lmnas.com"],
   },
-//   reactStrictMode: true,
-// basePath: '/blog',
+  // reactStrictMode: true,
+basePath: '/blog',
 };

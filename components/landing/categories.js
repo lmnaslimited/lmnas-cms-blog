@@ -4,8 +4,6 @@ const categoryColor = [
     'teal-500',
     'purple-500',
     'sky-500',
-   
-    
 ]
 export default function Categories({ categories }) {
     return (

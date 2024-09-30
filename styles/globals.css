@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    @import url(lmnasTheme.css);
+    @import url(themeDiversity.css);
+    @import url(themeLocalTalent.css);
+    @import url(themeEnvironment.css);
+    @import url(themeNeutral.css);
+    @import url(lmnasThemeDark.css);
+      }
+ 

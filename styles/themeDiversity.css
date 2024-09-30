@@ -1,0 +1,22 @@
+html[data-theme="themeDiversity"] {
+    --color-colormode:theme(colors.white);
+    --color-primary:theme(colors.rose.700);
+    --color-secondary:theme(colors.rose.400);
+    --color-tertiary:theme(colors.rose.950);
+    --color-quaternary:theme(colors.rose.100);
+    --color-quinary:theme(colors.rose.50);
+    --color-backgroundPrimary:theme(colors.zinc.50);
+    --color-backgroundSecondary:theme(colors.zinc.100);
+    --color-backgroundTertiary:theme(colors.zinc.200);
+    --color-textPrimary:theme(colors.gray.800);
+    --color-textSecondary:theme(colors.gray.700);
+    --color-textTertiary:theme(colors.gray.500);
+    --color-textQuaternary:theme(colors.gray.400);
+    --color-textQuinary:theme(colors.gray.300);
+    --color-textSenary:theme(colors.slate.400);
+    --color-pink:theme(colors.rose.600);
+    --color-yellow:theme(colors.amber.400);
+    --color-green:theme(colors.emerald.600);
+    --color-borderPrimary:theme(colors.gray.200);
+    --color-borderSecondary:theme(colors.gray.300);
+}
