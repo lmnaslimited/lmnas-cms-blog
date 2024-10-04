@@ -26,8 +26,9 @@
 
 module.exports = {  
   images: {
-    domains: ["localhost", "res.cloudinary.com", "lmnas.com"],
+    domains: ["dumps-240005.lmnaslens.com"],
   },
+  
   // reactStrictMode: true,
 basePath: '/blog',
 };

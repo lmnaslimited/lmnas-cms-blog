@@ -10,11 +10,11 @@ const language = [
     name: "EN",
     avatar:"/blog/ukflag.svg"
   },
-  {
-    id:'de',
-    name: "DE",
-    avatar:"/blog/germanflag.svg"
-  },
+  // {
+  //   id:'de',
+  //   name: "DE",
+  //   avatar:"/blog/germanflag.svg"
+  // },
 ];
 
 function classNames(...classes) {

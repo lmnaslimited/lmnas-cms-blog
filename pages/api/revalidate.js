@@ -3,7 +3,7 @@ export default async function handler(
   req,
   res 
 ) {
-  if (req.query.secret !== process.env.STRAPI_PREVIEW_SECRET) {
+  if (req.query.Authorization !== process.env.STRAPI_PREVIEW_SECRET) {
     return res.status(401).json({ message: 'Invalid token' });
   }
 
@@ -23,10 +23,10 @@ export default async function handler(
       await res.revalidate(`/category/${categorie}`);
     }
 
-    await res.revalidate('/');  
+    await res.revalidate('/blog');  
 
     
-    res.writeHead(307, { Location: '/' });
+    res.writeHead(307, { Location: '/blog' });
     res.end();
     
 
