@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://lmnas.com/blog</loc><lastmod>2024-09-30T10:57:56.970Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://lmnas.com/blog/category/technology</loc><lastmod>2024-09-30T10:57:56.971Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://lmnas.com/blog/category/marketing</loc><lastmod>2024-09-30T10:57:56.971Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://lmnas.com/blog/posts/html</loc><lastmod>2024-09-30T10:57:56.971Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://lmnas.com/blog/posts/css</loc><lastmod>2024-09-30T10:57:56.971Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://lmnas.com/blog/posts/top-recommended-books-to-grow-your-business-lmn-as-readers-week</loc><lastmod>2024-09-30T10:57:56.971Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://lmnas.com/blog/posts/crm-implementation-for-a-transformer-manufacturer-a-first-step-towards-industry-4-0</loc><lastmod>2024-09-30T10:57:56.971Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://lmnas.com/blog/posts/do-you-want-a-professional-website-we-got-you-get-a-taste-of-word-press-via-taste-wp-2</loc><lastmod>2024-09-30T10:57:56.971Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://lmnas.com/blog/posts</loc><lastmod>2024-09-30T10:57:56.971Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://lmnas.com/blog/category</loc><lastmod>2024-09-30T10:57:56.971Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://lmnas.com/blog</loc><lastmod>2024-10-04T07:43:32.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://lmnas.com/blog/category/technology</loc><lastmod>2024-10-04T07:43:32.883Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://lmnas.com/blog/posts/the-rise-of-artificial-intelligence-shaping-the-future-of-technology</loc><lastmod>2024-10-04T07:43:32.883Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://lmnas.com/blog/posts</loc><lastmod>2024-10-04T07:43:32.883Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://lmnas.com/blog/category</loc><lastmod>2024-10-04T07:43:32.883Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
