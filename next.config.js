@@ -26,7 +26,9 @@
 
 module.exports = {  
   images: {
+    // domains: ["localhost"],
     domains: ["dumps-240005.lmnaslens.com"],
+
   },
   
   // reactStrictMode: true,
