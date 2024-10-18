@@ -44,7 +44,7 @@ export default function Index({ allPosts, preview, categories, caseStudyData }) 
                                 <PostCard post={allPosts[3] ? allPosts[3] : heroPost} size='1/3' />
                             </div>
                             <div className="col-span-3">
-                            <CasestudyDownload isolution={caseStudyData} />
+                            {/* <CasestudyDownload isolution={caseStudyData} /> */}
                             {/* <DownloadCard imageSrc={"https://res.cloudinary.com/lmnas/image/upload/v1649901729/download_card_5821x3886_d1e1c9daee.jpg"} size='1/3' /> */}
                             </div>
 
