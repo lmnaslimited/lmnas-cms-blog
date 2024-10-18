@@ -12,7 +12,7 @@ export default async function handler(req, res) {
             
             // Check if the email is already subscribed
             const emailCheckResponse = await fetch(
-                `${process.env.URL}/api/resource/Email Group Member?fields=["email"]&filters={"email":"${email}","email_group":"Website"}`,
+                `${process.env.SUBSCRIBE_URL}/api/resource/Email Group Member?fields=["email"]&filters={"email":"${email}","email_group":"Website"}`,
                 {
                     method: 'GET',
                     headers: myHeaders,
@@ -33,7 +33,7 @@ export default async function handler(req, res) {
  
             // Subscribe the email if it's not already subscribed
             const subscribeResponse = await fetch(
-                `${process.env.URL}/api/method/frappe.email.doctype.newsletter.newsletter.subscribe`,
+                `${process.env.SUBSCRIBE_URL}/api/method/frappe.email.doctype.newsletter.newsletter.subscribe`,
                 {
                     method: 'POST',
                     headers: myHeaders,
