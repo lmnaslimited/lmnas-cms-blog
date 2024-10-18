@@ -1,16 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 export default function CollapseMenu({ subMenus }) {
-  console.log(subMenus)
   const hiddenClass = ' hidden'
   const [collapse, setCollapse] = useState(true);
+  // create a React ref for the dropdown element
+  const dropdown = useRef(null);
+  useEffect(() => {
+    // only add the event listener when the dropdown is opened
+    if (collapse) return;
+    function handleClick(event) {
+      if (dropdown.current && !dropdown.current.contains(event.target)) {
+        setCollapse(true);
+      }
+    }
+    window.addEventListener("click", handleClick);
+    // clean up
+    return () => window.removeEventListener("click", handleClick);
+  }, [collapse]);
+
+  
   return (
     <button
       onClick={() => {
         setCollapse(!collapse);
       }}>
-      <div className="block  lg:inline-block text-th-primary-medium hover:text-th-accent-medium">
+      <div  ref={dropdown} className="block  lg:inline-block text-th-primary-medium hover:text-th-accent-medium">
         <svg
-          className="fill-current h-4 w-4 text-th-primary-dark  dark:hover:text-pink-500  hover:text-pink-500"
+          className="fill-current h-4 w-4 ml-4 text-th-primary-dark  dark:hover:text-pink-500  hover:text-pink-500"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
         >
@@ -19,12 +34,12 @@ export default function CollapseMenu({ subMenus }) {
           />
         </svg>
       </div>
-      <ul className={"absolute md:h-20 pt-1 group-hover:block" + (collapse ? hiddenClass : null)}>
+      <ul className={"absolute -ml-8 py-20 md:h-20 pt-1 group-hover:block" + (collapse ? hiddenClass : null)}>
         {
           subMenus.map((subMenu) => (
-            <li className="">
-              <a className="bg-th-primary-dark text-th-background-secondary rounded-t  hover:bg-pink-500 dark:hover:text-pink-500 py-2 px-4 block whitespace-no-wrap" href="#">
-                {subMenu}
+            <li key={subMenu.name} className="">
+              <a href={`/blog/category/${subMenu.slug}`} className="px-12 bg-th-primary-light text-th-background-secondary  hover:bg-th-accent-medium hover:text-th-primary-light py-2 block whitespace-no-wrap">
+                {subMenu.name}
               </a>
             </li>))
         }

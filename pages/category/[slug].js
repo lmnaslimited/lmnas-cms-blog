@@ -3,43 +3,43 @@ import MoreStories from '@/components/more-stories'
 import HeroPost from '@/components/hero-post'
 import Intro from '@/components/intro'
 import Layout from '@/components/layout'
-import { getAllPostsForHome } from '@/lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 import { strapiAPI } from '@/lib/api'
+import FooterBanner from '../../components/footer-banner'
+import { getCategorybySlug,getPostBySlug } from '@/lib/api' // Update imports
+import { getHomePageData } from "../api/homePageData"
 
 
-//import Seo from "../../components/seo"
 
-
-const Category = ({ category, preview, categories, authors }) => {
-   //Implement this later
- /* const seo = {
-    metaTitle: category.name,
-    metaDescription: `All ${category.name} articles`,
-     <Seo seo={seo} />
-  } */
-  const heroPost = category.posts[0]
+const Category = ({ category, homePageData,  posts }) => {
+  const heroPost = posts[0]
   const morePosts = category.posts.slice(1).map((post) => (
-
-    {slug:post.slug,
-    title:post.title,
-    coverImage:post.coverImage,
-    date:post.date,
-    author:authors.find(c => c.name = post.author),
-    excerpt:post.excerpt
-  }
+    {
+      slug: post.slug,
+      title: post.title,
+      coverImage: post.coverImage,
+      date: post.date,
+      author: post.author,
+      excerpt: post.excerpt
+    }
   ))
-  const author = {name: heroPost.author, picture: authors[0].picture} 
+
+
+  const author = { name: heroPost.author.name, picture: heroPost.author.picture }
   return (
     <>
-      <Layout preview={preview} categories = {categories} >
-       
-        <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
-        </Head>
-        <Container>
-          <Intro title={category.name}/>
+
+<main className="bg-th-backgroundPrimary">
+      <div className="absolute inset-0 bg-[url(/blog/product-heroBG.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+      <div className="relative">
+        
+      <Layout ilayoutData={homePageData[0].layoutData}>
+      <Container>
+          <Head>
+            <title>LMNAs Blog | Category {category.name}</title>
+          </Head>
+          <Intro title={category.name} />
           {heroPost && (
             <HeroPost
               title={heroPost.title}
@@ -50,17 +50,18 @@ const Category = ({ category, preview, categories, authors }) => {
               excerpt={heroPost.excerpt}
             />
           )}
-           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+      </Container>
       </Layout>
+    </div>
+    </main>
+      <FooterBanner />
     </>
-
   )
 }
 
 export async function getStaticPaths() {
-  const categories = await strapiAPI("/categories")
-  
+  const categories = await strapiAPI("/api/categories")
 
   return {
     paths: categories.map((category) => ({
@@ -73,13 +74,18 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const category = (await strapiAPI(`/categories?slug=${params.slug}`))[0]
-  const categories = await strapiAPI("/categories")
-  const authors = await strapiAPI("/authors")
+ 
+  
+  // Fetch data using appropriate API calls
+  const category = (await getCategorybySlug(params.slug))[0] 
+  const categories = await strapiAPI("/api/categories")
+  // const authors = await getCategorybySlug() 
+  const posts = await getPostBySlug(category.posts[0].slug)
+  const homePageData = await getHomePageData("en");
 
   return {
-    props: { category, categories, authors },
-    revalidate: 1,
+    props: { category, categories,posts,homePageData },
+    revalidate: false,
   }
 }
 

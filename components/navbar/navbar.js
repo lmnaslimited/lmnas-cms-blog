@@ -12,7 +12,6 @@ const industries = ['Retail', 'Education', 'Healthcare', 'Distribution', 'Manufa
 
 
 const Navbar = ({ categories }) => {
-  const cat = categories.map((category) => { return category.name })
   const menuItems = BuildMenu({ categories })
   const [mounted, setMounted] = useState(false);
   // When mounted on client, now we can show the UI
@@ -22,17 +21,17 @@ const Navbar = ({ categories }) => {
   return (<div>
     <nav className="mx-auto flex items-center justify-between flex-wrap py-6">
       <Logo />
-      {/**Handle Hamburger toggle and set the displayMobileMenu AppContext */}
+      {/**Handle Hamburger toggle and set the display MobileMenu AppContext */}
       <ToggleMobileMenu />
       <div className={"w-full block flex-grow lg:flex  lg:items-center lg:w-auto " + (appContext.displayMobileMenu ? " hidden" : null)}>
         <MenuList menuItems={menuItems} />
-        {/**To be replaced with Typesense Search */}
-        <Search />
+        {/**To be replaced with Typesense Search 
+        <Search />*/}
         <div className="flex items-center justify-between flex-row-reverse lg:flex-row">
           <div className="mt-4 lg:mt-0">
             <SunMoon />
           </div>
-          <Login />
+         {/**  <Login />*/}
         </div>
       </div>
     </nav>
@@ -43,15 +42,28 @@ const Navbar = ({ categories }) => {
 export default Navbar
 
 function BuildMenu({ categories }) {
-  const cat = categories.map((category) => { return category.name })
+  
+  const cat = categories.map((category) => { return {name: category.name, slug: category.slug}  })
   return [
-    { menu: 'Industries' },
+    // {
+    //   menu: 'Industries',
+    //   target: 'https://lmnas.com/#industries'
+    // },
+    // {
+    //   menu: 'Pricing',
+    //   target: 'https://lmnas.com/#pricing'
+    // },
     {
-      menu: 'Pricing',
-    },
-    {
-      menu: 'Blog',
+      menu: 'Category',
       subMenus: [...cat]
-    }, { menu: 'Contact' }, { menu: 'Subscriptions' }
+    },
+    // {
+    //   menu: 'Contact',
+    //   target: 'https://lmnas.com/contact'
+    // },
+    {
+      menu: 'Subscriptions',
+      target: 'https://nectar.lmnas.com/all-products'
+    }
   ]
 }

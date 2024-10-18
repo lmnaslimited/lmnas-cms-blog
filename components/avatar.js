@@ -13,7 +13,7 @@ export default function Avatar({ name, picture }) {
           alt={name}
         /> 
       </div>
-      <div className="text-xl font-bold text-th-accent-medium">{name}</div>
+      <div className="text-xl font-bold text-th-primary">{name}</div>
     </div>
   )
 }

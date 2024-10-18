@@ -14,13 +14,14 @@ export default function PostPreview({
   return (
     <div>
       <div className="mb-5">
-        <CoverImage slug={slug} title={title} url={coverImage.url} />
+       { coverImage.url && <CoverImage slug={slug} title={title} url={coverImage.url} />}
       </div>
       <h3 className="text-3xl mb-3 leading-snug">
-        <Link href={process.env.BACKEND_URL + `/posts/${slug}`}>
-          <a className="hover:underline">{title}</a>
-        </Link>
-      </h3>
+  <Link href={process.env.BACKEND_URL + `/posts/${slug}`} className="hover:underline">
+    {title}
+  </Link>
+</h3>
+
       <div className="text-lg mb-4 text-th-accent-medium">
         <Date dateString={date} />
       </div>

@@ -1,0 +1,23 @@
+html {
+    --color-mode:theme(colors.white);
+    --color-primary: #225aa0;
+    --color-secondary: #4bade9;
+    --color-tertiary:#1a3c5d;
+    --color-quaternary:theme(colors.sky.100);
+    --color-quinary:theme(colors.sky.50);
+    --color-backgroundPrimary:theme(colors.gray.50);
+    --color-backgroundSecondary:theme(colors.gray.100);
+    --color-backgroundTertiary:theme(colors.gray.200);
+    --color-textPrimary:theme(colors.gray.800);
+    --color-textSecondary:theme(colors.gray.700);
+    --color-textTertiary:theme(colors.gray.500);
+    --color-textQuaternary:theme(colors.gray.400);
+    --color-textQuinary:theme(colors.gray.300);
+    --color-textSenary:theme(colors.gray.300);
+    --color-pink:theme(colors.pink.600);
+    --color-yellow:theme(colors.amber.400);
+    --color-green:theme(colors.emerald.600);
+    --color-borderPrimary:theme(colors.gray.200);
+    --color-borderSecondary:theme(colors.gray.300);
+    }
+    
